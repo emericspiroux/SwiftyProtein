@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-wo-une">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KL8-Ut-4eC">
+                                        <rect key="frame" x="39" y="49" width="163" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="PjK-Wq-9Pp"/>
+                                            <constraint firstAttribute="height" constant="30" id="SiO-Oe-cNh"/>
+                                        </constraints>
+                                        <state key="normal" title="Login Touch ID"/>
+                                        <connections>
+                                            <action selector="checkTouchId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1M-uY-fAm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="P4J-3T-Tza"/>
+                                    <constraint firstAttribute="width" constant="240" id="QSk-Jo-Wjz"/>
+                                    <constraint firstAttribute="height" constant="128" id="R5l-lL-6xS"/>
+                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" id="Zfp-aw-8Nb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HHU-wo-une" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="coB-Xj-NEr"/>
+                            <constraint firstItem="HHU-wo-une" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="klo-hi-4x6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="touchIDLogin" destination="KL8-Ut-4eC" id="aDF-Hh-Am7"/>
+                        <segue destination="1sp-aQ-dD8" kind="presentation" identifier="goToConnect" modalTransitionStyle="coverVertical" id="jgU-Ta-C1T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="231"/>
+        </scene>
+        <!--ProteinList-->
+        <scene sceneID="6SC-8Q-7ar">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ProteinList" id="1sp-aQ-dD8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Unn-gX-KGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927.5" y="231"/>
+        </scene>
+    </scenes>
+</document>
