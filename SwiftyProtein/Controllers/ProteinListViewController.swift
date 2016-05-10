@@ -14,7 +14,10 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	@IBOutlet weak var tableLigand: UITableView!
 	@IBOutlet weak var searchLigand: UISearchBar!
 	
+	var selectedLigan:Ligand? = nil
 	var listLigand = ListLigand.Shared().listLigands
+	var apiRequester = ApiRequester.Shared()
+	
 	let cellName = "LigandCell"
 	
     override func viewDidLoad() {
@@ -67,6 +70,13 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		apiRequester.request(LigandRouter.Read(listLigand[indexPath.row].name), success: { (xmlData) in
+				self.selectedLigan = Ligand(nameLigand: xmlData)
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			}) { (error) in
+				print(error.domain)
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		}
+		
 	}
 }

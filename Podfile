@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'SwiftyProtein' do
 pod 'SWXMLHash', '~> 2.3.0'
+pod 'Alamofire', '~> 3.3'
 end
 
 target 'SwiftyProteinTests' do

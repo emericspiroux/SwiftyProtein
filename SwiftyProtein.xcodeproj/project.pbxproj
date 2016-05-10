@@ -25,6 +25,10 @@
 		462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85741CE18A680020D4BD /* LigandTableViewCell.swift */; };
 		462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462C85761CE18A9C0020D4BD /* LigandCell.xib */; };
 		462C857B1CE194550020D4BD /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 462C857A1CE194550020D4BD /* ligands.txt */; };
+		462C857F1CE1A2AD0020D4BD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C857E1CE1A2AD0020D4BD /* Alamofire.framework */; };
+		462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85841CE1A38D0020D4BD /* LigandRouter.swift */; };
+		462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85861CE1A3980020D4BD /* ApiRouter.swift */; };
+		462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85881CE1A3A00020D4BD /* ApiRequester.swift */; };
 		B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +66,10 @@
 		462C85741CE18A680020D4BD /* LigandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandTableViewCell.swift; path = Controllers/Cells/LigandTableViewCell.swift; sourceTree = "<group>"; };
 		462C85761CE18A9C0020D4BD /* LigandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LigandCell.xib; path = Views/Cells/LigandCell.xib; sourceTree = "<group>"; };
 		462C857A1CE194550020D4BD /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
+		462C857E1CE1A2AD0020D4BD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftyProtein-cydtvmjotaumvodjlqtuxrtgptgl/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		462C85841CE1A38D0020D4BD /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Helpers/Routers/LigandRouter.swift; sourceTree = "<group>"; };
+		462C85861CE1A3980020D4BD /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Helpers/Routers/ApiRouter.swift; sourceTree = "<group>"; };
+		462C85881CE1A3A00020D4BD /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Helpers/ApiRequester.swift; sourceTree = "<group>"; };
 		7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ADE04DC1F0D07602C37701 /* Pods-SwiftyProteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462C857F1CE1A2AD0020D4BD /* Alamofire.framework in Frameworks */,
 				462C85701CE179220020D4BD /* SWXMLHash.framework in Frameworks */,
 				462C85581CE16B4F0020D4BD /* LocalAuthentication.framework in Frameworks */,
 				B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */,
@@ -93,6 +102,7 @@
 		33CB7D4A675819F81AE89349 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				462C857E1CE1A2AD0020D4BD /* Alamofire.framework */,
 				462C856F1CE179220020D4BD /* SWXMLHash.framework */,
 				7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */,
 				7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */,
@@ -205,6 +215,8 @@
 		462C85591CE16E220020D4BD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				462C858A1CE1A3A80020D4BD /* Routers */,
+				462C85881CE1A3A00020D4BD /* ApiRequester.swift */,
 				462C85651CE170BA0020D4BD /* ShowAlert.swift */,
 				462C855C1CE16E720020D4BD /* Errors */,
 			);
@@ -241,6 +253,15 @@
 				462C857A1CE194550020D4BD /* ligands.txt */,
 			);
 			name = Ressources;
+			sourceTree = "<group>";
+		};
+		462C858A1CE1A3A80020D4BD /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				462C85841CE1A38D0020D4BD /* LigandRouter.swift */,
+				462C85861CE1A3980020D4BD /* ApiRouter.swift */,
+			);
+			name = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,10 +468,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
+				462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
 				462C85641CE170B00020D4BD /* LAErrorCodes.swift in Sources */,
 				462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */,
 				462C856C1CE175EE0020D4BD /* ListLigand.swift in Sources */,
+				462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */,
+				462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */,
 				462C856E1CE176780020D4BD /* Ligand.swift in Sources */,
 				462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */,
 				462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */,

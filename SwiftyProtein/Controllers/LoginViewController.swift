@@ -12,6 +12,7 @@ import LocalAuthentication
 class LoginViewController: UIViewController {
 
 	@IBOutlet weak var touchIDLogin: UIButton!
+	@IBOutlet weak var loadingTouchId: UIActivityIndicatorView!
 	let authenticationContext = LAContext()
 	
     override func viewDidLoad() {
@@ -34,11 +35,17 @@ class LoginViewController: UIViewController {
     }
     
 	@IBAction func checkTouchId(sender: UIButton) {
+		loadingTouchId.startAnimating()
+		touchIDLogin.hidden = true
 		authenticationContext.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Just for the protein skills")
 		{ (success, error) in
 			if (success){
+				self.loadingTouchId.stopAnimating()
+				self.touchIDLogin.hidden = false
 				self.performSegueWithIdentifier("goToConnect", sender: self)
 			} else {
+				self.loadingTouchId.stopAnimating()
+				self.touchIDLogin.hidden = false
 				if let error = error {
 					let message = errorMessageForLAErrorCode(error.code)
 					showAlertWithTitle("Touch ID", message: message, view: self)

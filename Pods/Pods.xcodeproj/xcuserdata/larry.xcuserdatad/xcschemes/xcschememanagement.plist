@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SwiftyProtein.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>74B0B582A6A683E3F246B8EB935534C6</key>
+		<key>164C48BD89FB4C9B65BF2B4DAB3D6E29</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC37A913351B024E3C677310DFB50FCD</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CF22D67C638DCDD397F402CA7529F06F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5CCC9E111940B2140A00745C5A5DC6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
