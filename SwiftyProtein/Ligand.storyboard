@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tP0-uv-Lz1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kdQ-8n-i0k">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Ligand 3D View-->
-        <scene sceneID="W7F-NW-jeQ">
+        <scene sceneID="sDS-Hj-Qc5">
             <objects>
-                <viewController title="Ligand 3D View" id="tP0-uv-Lz1" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Coz-MI-pFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Ligand 3D View" id="kdQ-8n-i0k" customClass="SceneKitViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="U4U-0F-7ST"/>
-                        <viewControllerLayoutGuide type="bottom" id="pFU-bq-qY9"/>
+                        <viewControllerLayoutGuide type="top" id="fiI-ou-Xvt"/>
+                        <viewControllerLayoutGuide type="bottom" id="gil-Pb-NFS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lBk-gi-tpD">
+                    <view key="view" contentMode="scaleToFill" id="Nl1-OS-NiV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avi-yG-zCW">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHn-eu-pM8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                            </glkView>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oHn-eu-pM8" secondAttribute="trailing" constant="-20" id="CLg-9s-jzs"/>
+                            <constraint firstItem="gil-Pb-NFS" firstAttribute="top" secondItem="oHn-eu-pM8" secondAttribute="bottom" id="YCW-mY-1L4"/>
+                            <constraint firstItem="oHn-eu-pM8" firstAttribute="leading" secondItem="Nl1-OS-NiV" secondAttribute="leadingMargin" constant="-20" id="gFm-MO-WIN"/>
+                            <constraint firstItem="oHn-eu-pM8" firstAttribute="top" secondItem="fiI-ou-Xvt" secondAttribute="bottom" id="nB3-G8-h2a"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LigandScene" destination="oHn-eu-pM8" id="6ZD-Qi-3qa"/>
+                        <outlet property="ligandScene" destination="oHn-eu-pM8" id="xhU-F9-Hs0"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8fC-wj-JMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="277"/>
+            <point key="canvasLocation" x="1201" y="248"/>
         </scene>
     </scenes>
 </document>

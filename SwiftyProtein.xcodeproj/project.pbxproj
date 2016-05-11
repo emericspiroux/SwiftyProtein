@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		204CB1C6C187EE2292499B2A /* Pods_SwiftyProteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */; };
-		462AB7F31CE3A0B4001E6C7C /* Ligand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */; };
 		462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */; };
 		462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F61CE3A20D001E6C7C /* Atom.swift */; };
 		462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F71CE3A20D001E6C7C /* Connect.swift */; };
+		462AB81C1CE3AB3B001E6C7C /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AB81B1CE3AB3B001E6C7C /* SceneKit.framework */; };
+		462AB8221CE3BB33001E6C7C /* LigandScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8211CE3BB32001E6C7C /* LigandScene.swift */; };
+		462AB82C1CE3D043001E6C7C /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB82B1CE3D043001E6C7C /* UIColorExt.swift */; };
+		462AB82E1CE3D07E001E6C7C /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB82D1CE3D07E001E6C7C /* ApiRequester.swift */; };
+		462AB8321CE3D0A0001E6C7C /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */; };
+		462AB8331CE3D0A0001E6C7C /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */; };
+		462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */; };
+		462AB8381CE3D9B8001E6C7C /* Ligand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */; };
 		462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85301CE16A270020D4BD /* AppDelegate.swift */; };
 		462C85381CE16A270020D4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462C85371CE16A270020D4BD /* Assets.xcassets */; };
 		462C85461CE16A270020D4BD /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85451CE16A270020D4BD /* SwiftyProteinTests.swift */; };
@@ -19,7 +26,6 @@
 		462C85581CE16B4F0020D4BD /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C85571CE16B4F0020D4BD /* LocalAuthentication.framework */; };
 		462C85601CE170330020D4BD /* ProteinList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C855F1CE170330020D4BD /* ProteinList.storyboard */; };
 		462C85621CE170750020D4BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C85611CE170750020D4BD /* LaunchScreen.storyboard */; };
-		462C85641CE170B00020D4BD /* LAErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85631CE170B00020D4BD /* LAErrorCodes.swift */; };
 		462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85651CE170BA0020D4BD /* ShowAlert.swift */; };
 		462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85671CE1710C0020D4BD /* ProteinListViewController.swift */; };
 		462C856A1CE173260020D4BD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C85691CE173260020D4BD /* Login.storyboard */; };
@@ -30,9 +36,6 @@
 		462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462C85761CE18A9C0020D4BD /* LigandCell.xib */; };
 		462C857B1CE194550020D4BD /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 462C857A1CE194550020D4BD /* ligands.txt */; };
 		462C857F1CE1A2AD0020D4BD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C857E1CE1A2AD0020D4BD /* Alamofire.framework */; };
-		462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85841CE1A38D0020D4BD /* LigandRouter.swift */; };
-		462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85861CE1A3980020D4BD /* ApiRouter.swift */; };
-		462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85881CE1A3A00020D4BD /* ApiRequester.swift */; };
 		B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,10 +52,17 @@
 /* Begin PBXFileReference section */
 		2B361157391BD0CA3E15FED3 /* Pods-SwiftyProteinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.release.xcconfig"; sourceTree = "<group>"; };
 		32481A55E441FFB5487163BE /* Pods-SwiftyProtein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.debug.xcconfig"; sourceTree = "<group>"; };
-		462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ligand.storyboard; sourceTree = "<group>"; };
 		462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneKitViewController.swift; path = Controllers/SceneKitViewController.swift; sourceTree = "<group>"; };
 		462AB7F61CE3A20D001E6C7C /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Atom.swift; path = Models/Atom.swift; sourceTree = "<group>"; };
 		462AB7F71CE3A20D001E6C7C /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connect.swift; path = Models/Connect.swift; sourceTree = "<group>"; };
+		462AB81B1CE3AB3B001E6C7C /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		462AB8211CE3BB32001E6C7C /* LigandScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandScene.swift; path = Views/SceneKitView/LigandScene.swift; sourceTree = "<group>"; };
+		462AB82B1CE3D043001E6C7C /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExt.swift; path = Helpers/UIColorExt.swift; sourceTree = "<group>"; };
+		462AB82D1CE3D07E001E6C7C /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Library/ApiRequester.swift; sourceTree = "<group>"; };
+		462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Library/Routers/ApiRouter.swift; sourceTree = "<group>"; };
+		462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Library/Routers/LigandRouter.swift; sourceTree = "<group>"; };
+		462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LAErrorCodes.swift; path = Helpers/Errors/LAErrorCodes.swift; sourceTree = "<group>"; };
+		462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ligand.storyboard; sourceTree = "<group>"; };
 		462C852D1CE16A270020D4BD /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462C85301CE16A270020D4BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462C85371CE16A270020D4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +74,6 @@
 		462C85571CE16B4F0020D4BD /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		462C855F1CE170330020D4BD /* ProteinList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProteinList.storyboard; path = Views/ProteinList.storyboard; sourceTree = "<group>"; };
 		462C85611CE170750020D4BD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		462C85631CE170B00020D4BD /* LAErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LAErrorCodes.swift; path = Helpers/Errors/LAErrorCodes.swift; sourceTree = "<group>"; };
 		462C85651CE170BA0020D4BD /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAlert.swift; path = Helpers/ShowAlert.swift; sourceTree = "<group>"; };
 		462C85671CE1710C0020D4BD /* ProteinListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProteinListViewController.swift; path = Controllers/ProteinListViewController.swift; sourceTree = "<group>"; };
 		462C85691CE173260020D4BD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Views/Login.storyboard; sourceTree = "<group>"; };
@@ -75,9 +84,6 @@
 		462C85761CE18A9C0020D4BD /* LigandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LigandCell.xib; path = Views/Cells/LigandCell.xib; sourceTree = "<group>"; };
 		462C857A1CE194550020D4BD /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		462C857E1CE1A2AD0020D4BD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftyProtein-cydtvmjotaumvodjlqtuxrtgptgl/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		462C85841CE1A38D0020D4BD /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Helpers/Routers/LigandRouter.swift; sourceTree = "<group>"; };
-		462C85861CE1A3980020D4BD /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Helpers/Routers/ApiRouter.swift; sourceTree = "<group>"; };
-		462C85881CE1A3A00020D4BD /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Helpers/ApiRequester.swift; sourceTree = "<group>"; };
 		7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ADE04DC1F0D07602C37701 /* Pods-SwiftyProteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462AB81C1CE3AB3B001E6C7C /* SceneKit.framework in Frameworks */,
 				462C857F1CE1A2AD0020D4BD /* Alamofire.framework in Frameworks */,
 				462C85701CE179220020D4BD /* SWXMLHash.framework in Frameworks */,
 				462C85581CE16B4F0020D4BD /* LocalAuthentication.framework in Frameworks */,
@@ -110,6 +117,7 @@
 		33CB7D4A675819F81AE89349 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				462AB81B1CE3AB3B001E6C7C /* SceneKit.framework */,
 				462C857E1CE1A2AD0020D4BD /* Alamofire.framework */,
 				462C856F1CE179220020D4BD /* SWXMLHash.framework */,
 				7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */,
@@ -127,6 +135,41 @@
 				2B361157391BD0CA3E15FED3 /* Pods-SwiftyProteinTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		462AB7FA1CE3A602001E6C7C /* SceneKitView */ = {
+			isa = PBXGroup;
+			children = (
+				462AB8211CE3BB32001E6C7C /* LigandScene.swift */,
+			);
+			name = SceneKitView;
+			sourceTree = "<group>";
+		};
+		462AB8281CE3CFEF001E6C7C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				462AB8341CE3D15A001E6C7C /* Errors */,
+				462AB82B1CE3D043001E6C7C /* UIColorExt.swift */,
+				462C85651CE170BA0020D4BD /* ShowAlert.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		462AB82F1CE3D085001E6C7C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */,
+				462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */,
+			);
+			name = Routers;
+			sourceTree = "<group>";
+		};
+		462AB8341CE3D15A001E6C7C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */,
+			);
+			name = Errors;
 			sourceTree = "<group>";
 		};
 		462C85241CE16A270020D4BD = {
@@ -153,8 +196,9 @@
 		462C852F1CE16A270020D4BD /* SwiftyProtein */ = {
 			isa = PBXGroup;
 			children = (
+				462AB8281CE3CFEF001E6C7C /* Helpers */,
 				462C85791CE194440020D4BD /* Ressources */,
-				462C85591CE16E220020D4BD /* Helpers */,
+				462C85591CE16E220020D4BD /* Library */,
 				462C85541CE16A930020D4BD /* Views */,
 				462C85531CE16A8C0020D4BD /* Services */,
 				462C85521CE16A870020D4BD /* Controllers */,
@@ -216,31 +260,22 @@
 		462C85541CE16A930020D4BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				462AB7FA1CE3A602001E6C7C /* SceneKitView */,
 				462C85711CE18A150020D4BD /* Cells */,
 				462C85691CE173260020D4BD /* Login.storyboard */,
 				462C855F1CE170330020D4BD /* ProteinList.storyboard */,
-				462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */,
+				462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		462C85591CE16E220020D4BD /* Helpers */ = {
+		462C85591CE16E220020D4BD /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				462C858A1CE1A3A80020D4BD /* Routers */,
-				462C85881CE1A3A00020D4BD /* ApiRequester.swift */,
-				462C85651CE170BA0020D4BD /* ShowAlert.swift */,
-				462C855C1CE16E720020D4BD /* Errors */,
+				462AB82F1CE3D085001E6C7C /* Routers */,
+				462AB82D1CE3D07E001E6C7C /* ApiRequester.swift */,
 			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		462C855C1CE16E720020D4BD /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				462C85631CE170B00020D4BD /* LAErrorCodes.swift */,
-			);
-			name = Errors;
+			name = Library;
 			sourceTree = "<group>";
 		};
 		462C85711CE18A150020D4BD /* Cells */ = {
@@ -265,15 +300,6 @@
 				462C857A1CE194550020D4BD /* ligands.txt */,
 			);
 			name = Ressources;
-			sourceTree = "<group>";
-		};
-		462C858A1CE1A3A80020D4BD /* Routers */ = {
-			isa = PBXGroup;
-			children = (
-				462C85841CE1A38D0020D4BD /* LigandRouter.swift */,
-				462C85861CE1A3980020D4BD /* ApiRouter.swift */,
-			);
-			name = Routers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462C856A1CE173260020D4BD /* Login.storyboard in Resources */,
-				462AB7F31CE3A0B4001E6C7C /* Ligand.storyboard in Resources */,
+				462AB8381CE3D9B8001E6C7C /* Ligand.storyboard in Resources */,
 				462C857B1CE194550020D4BD /* ligands.txt in Resources */,
 				462C85601CE170330020D4BD /* ProteinList.storyboard in Resources */,
 				462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */,
@@ -481,19 +507,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
-				462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
-				462C85641CE170B00020D4BD /* LAErrorCodes.swift in Sources */,
+				462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */,
 				462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */,
+				462AB82C1CE3D043001E6C7C /* UIColorExt.swift in Sources */,
 				462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */,
 				462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */,
 				462C856C1CE175EE0020D4BD /* ListLigand.swift in Sources */,
-				462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */,
+				462AB8221CE3BB33001E6C7C /* LigandScene.swift in Sources */,
 				462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */,
-				462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */,
 				462C856E1CE176780020D4BD /* Ligand.swift in Sources */,
+				462AB8331CE3D0A0001E6C7C /* LigandRouter.swift in Sources */,
+				462AB82E1CE3D07E001E6C7C /* ApiRequester.swift in Sources */,
 				462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */,
 				462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */,
+				462AB8321CE3D0A0001E6C7C /* ApiRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

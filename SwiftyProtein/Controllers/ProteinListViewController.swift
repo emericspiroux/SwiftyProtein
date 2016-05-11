@@ -17,6 +17,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	var selectedLigan:Ligand? = nil
 	var listLigand = ListLigand.Shared().listLigands
 	var apiRequester = ApiRequester.Shared()
+	var selectedIndexRow:Int?
 	
 	let cellName = "LigandCell"
 	
@@ -74,11 +75,14 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 		{ (fileContent) in
 			do{
 				try self.listLigand[indexPath.row].setGraphicalInformation(fileContent)
-				showAlertWithTitle("Ligand", message: "Next Step !", view: self)
+				self.selectedIndexRow = indexPath.row
+				self.performSegueWithIdentifier("goToSceneKit", sender: self)
 			} catch LigandError.EmptyInfos {
 				showAlertWithTitle("Ligand", message: "Infos retrived are empty", view: self)
 			} catch LigandError.NoEndKeyword {
 				showAlertWithTitle("Ligand", message: "No end in file detected, maybe some data will be not display", view: self)
+				self.selectedIndexRow = indexPath.row
+				self.performSegueWithIdentifier("goToSceneKit", sender: self)
 			} catch {
 				showAlertWithTitle("Ligand", message: "Unknown Error", view: self)
 			}
@@ -86,6 +90,15 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 		}) { (error) in
 				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 				showAlertWithTitle("RCSB", message: "Network Problem occured, please check your connection and try again.", view: self)
+		}
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		let destinationController = segue.destinationViewController
+		if destinationController is SceneKitViewController {
+			if let indexRow = selectedIndexRow {
+				(destinationController as! SceneKitViewController).ligand = listLigand[indexRow]
+			}
 		}
 	}
 }

@@ -38,35 +38,15 @@ class Ligand {
 		
 		let linesTable = infos.componentsSeparatedByString("\n")
 		for line in linesTable{
-			if let atom = fillAtom(line){
+			if let atom = Atom(lineFile: line){
 				atomList.append(atom)
 			}
-			if let connect = fillConnect(line){
-				connectList.append(connect)
-			}
+//			if let connect = fillConnect(line){
+//				connectList.append(connect)
+//			}
 		}
 		guard infos.containsString("END") else {
 			throw LigandError.NoEndKeyword
 		}
-	}
-	
-	private func fillAtom(line:String) -> Atom? {
-		if (line != ""){
-			let data = line.componentsSeparatedByString(" ")
-			if data.count == 12 && data[0] == "ATOM" {
-				return (Atom(lineFile: line))
-			}
-		}
-		return (nil)
-	}
-	
-	private func fillConnect(line:String) -> Connect? {
-		if (line != ""){
-			let data = line.componentsSeparatedByString(" ")
-			if data.count == 12 && data[0] == "CONNECT" {
-				return Connect(lineFile: line)
-			}
-		}
-		return (nil)
 	}
 }
