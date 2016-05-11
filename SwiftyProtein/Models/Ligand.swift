@@ -41,12 +41,21 @@ class Ligand {
 			if let atom = Atom(lineFile: line){
 				atomList.append(atom)
 			}
-//			if let connect = fillConnect(line){
-//				connectList.append(connect)
-//			}
+			if let connect = Connect(lineFile: line){
+				connectList.append(connect)
+			}
 		}
 		guard infos.containsString("END") else {
 			throw LigandError.NoEndKeyword
 		}
+	}
+	
+	func atomById(id:Int) -> Atom?{
+		for atom in atomList {
+			if (atom.id == id){
+				return (atom)
+			}
+		}
+		return nil
 	}
 }

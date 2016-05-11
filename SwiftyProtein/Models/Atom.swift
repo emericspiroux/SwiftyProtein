@@ -6,6 +6,7 @@
 //  Copyright © 2016 42. All rights reserved.
 //
 import UIKit
+import SceneKit
 
 class Atom {
 	
@@ -17,9 +18,9 @@ class Atom {
 		return (self.data.count - 1)
 	}()
 	
-	lazy var id:String = {
-		return (self.data[1])
-	}()
+	lazy var id:Int = {
+		return (Int(self.data[1]))
+	}()!
 	
 	lazy var details:String = {
 		return (self.data[1])
@@ -54,7 +55,23 @@ class Atom {
 		data = dataFiltered
 	}
 	
+	// MARK: - 3D Comparaison
+	func distance(receiver:Atom) -> CGFloat{
+		let xd = receiver.x - self.x
+		let yd = receiver.y - self.y
+		let zd = receiver.z - self.z
+		let distance = CGFloat(sqrt(xd * xd + yd * yd + zd * zd))
+		
+		if (distance < 0){
+			return (distance * -1)
+		} else {
+			return (distance)
+		}
+	}
 	
+	func middlePoint(receiver:Atom) -> SCNVector3 {
+		return (SCNVector3(x: (receiver.x + self.x)/2, y: (receiver.y + self.y)/2, z: (receiver.z + self.z)/2))
+	}
 }
 
 private extension UIColor{

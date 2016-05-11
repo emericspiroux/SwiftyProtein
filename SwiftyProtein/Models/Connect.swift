@@ -28,8 +28,12 @@ class Connect {
 		return (IdsReceivers)
 	}()
 	
-	init(lineFile:String){
-		data = lineFile.componentsSeparatedByString(" ")
+	init?(lineFile:String){
+		let dataFiltered = lineFile.componentsSeparatedByString(" ").filter{$0 != ""}
+		guard (dataFiltered.count > 0 && dataFiltered[0] == "CONECT") else {
+			return nil
+		}
+		data = dataFiltered
 	}
 }
 
