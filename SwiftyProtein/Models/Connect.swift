@@ -7,6 +7,7 @@
 //
 
 class Connect {
+	
 	var data:[String]
 	
 	lazy var count:Int = {

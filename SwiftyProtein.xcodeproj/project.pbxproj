@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		204CB1C6C187EE2292499B2A /* Pods_SwiftyProteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */; };
+		462AB7F31CE3A0B4001E6C7C /* Ligand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */; };
+		462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */; };
+		462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F61CE3A20D001E6C7C /* Atom.swift */; };
+		462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F71CE3A20D001E6C7C /* Connect.swift */; };
 		462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85301CE16A270020D4BD /* AppDelegate.swift */; };
 		462C85381CE16A270020D4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462C85371CE16A270020D4BD /* Assets.xcassets */; };
 		462C85461CE16A270020D4BD /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85451CE16A270020D4BD /* SwiftyProteinTests.swift */; };
@@ -29,8 +33,6 @@
 		462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85841CE1A38D0020D4BD /* LigandRouter.swift */; };
 		462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85861CE1A3980020D4BD /* ApiRouter.swift */; };
 		462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85881CE1A3A00020D4BD /* ApiRequester.swift */; };
-		4638A1AE1CE26E28003D7B98 /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4638A1AD1CE26E27003D7B98 /* Atom.swift */; };
-		4638A1B01CE26EBA003D7B98 /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4638A1AF1CE26EBA003D7B98 /* Connect.swift */; };
 		B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,10 @@
 /* Begin PBXFileReference section */
 		2B361157391BD0CA3E15FED3 /* Pods-SwiftyProteinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.release.xcconfig"; sourceTree = "<group>"; };
 		32481A55E441FFB5487163BE /* Pods-SwiftyProtein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.debug.xcconfig"; sourceTree = "<group>"; };
+		462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ligand.storyboard; sourceTree = "<group>"; };
+		462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneKitViewController.swift; path = Controllers/SceneKitViewController.swift; sourceTree = "<group>"; };
+		462AB7F61CE3A20D001E6C7C /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Atom.swift; path = Models/Atom.swift; sourceTree = "<group>"; };
+		462AB7F71CE3A20D001E6C7C /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connect.swift; path = Models/Connect.swift; sourceTree = "<group>"; };
 		462C852D1CE16A270020D4BD /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462C85301CE16A270020D4BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462C85371CE16A270020D4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,8 +78,6 @@
 		462C85841CE1A38D0020D4BD /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Helpers/Routers/LigandRouter.swift; sourceTree = "<group>"; };
 		462C85861CE1A3980020D4BD /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Helpers/Routers/ApiRouter.swift; sourceTree = "<group>"; };
 		462C85881CE1A3A00020D4BD /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Helpers/ApiRequester.swift; sourceTree = "<group>"; };
-		4638A1AD1CE26E27003D7B98 /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
-		4638A1AF1CE26EBA003D7B98 /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
 		7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ADE04DC1F0D07602C37701 /* Pods-SwiftyProteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,9 +176,9 @@
 		462C85501CE16A720020D4BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				462AB7F61CE3A20D001E6C7C /* Atom.swift */,
+				462AB7F71CE3A20D001E6C7C /* Connect.swift */,
 				462C856D1CE176780020D4BD /* Ligand.swift */,
-				4638A1AD1CE26E27003D7B98 /* Atom.swift */,
-				4638A1AF1CE26EBA003D7B98 /* Connect.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -193,9 +197,10 @@
 		462C85521CE16A870020D4BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				462C85781CE18AE60020D4BD /* Cells */,
+				462C85781CE18AE60020D4BD /* CellsController */,
 				462C85551CE16AC40020D4BD /* LoginViewController.swift */,
 				462C85671CE1710C0020D4BD /* ProteinListViewController.swift */,
+				462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				462C85711CE18A150020D4BD /* Cells */,
 				462C85691CE173260020D4BD /* Login.storyboard */,
 				462C855F1CE170330020D4BD /* ProteinList.storyboard */,
+				462AB7F21CE3A0B4001E6C7C /* Ligand.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -245,12 +251,12 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		462C85781CE18AE60020D4BD /* Cells */ = {
+		462C85781CE18AE60020D4BD /* CellsController */ = {
 			isa = PBXGroup;
 			children = (
 				462C85741CE18A680020D4BD /* LigandTableViewCell.swift */,
 			);
-			name = Cells;
+			name = CellsController;
 			sourceTree = "<group>";
 		};
 		462C85791CE194440020D4BD /* Ressources */ = {
@@ -358,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462C856A1CE173260020D4BD /* Login.storyboard in Resources */,
+				462AB7F31CE3A0B4001E6C7C /* Ligand.storyboard in Resources */,
 				462C857B1CE194550020D4BD /* ligands.txt in Resources */,
 				462C85601CE170330020D4BD /* ProteinList.storyboard in Resources */,
 				462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */,
@@ -476,15 +483,16 @@
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
 				462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
-				4638A1B01CE26EBA003D7B98 /* Connect.swift in Sources */,
 				462C85641CE170B00020D4BD /* LAErrorCodes.swift in Sources */,
+				462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */,
+				462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */,
 				462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */,
 				462C856C1CE175EE0020D4BD /* ListLigand.swift in Sources */,
 				462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */,
+				462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */,
 				462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */,
 				462C856E1CE176780020D4BD /* Ligand.swift in Sources */,
 				462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */,
-				4638A1AE1CE26E28003D7B98 /* Atom.swift in Sources */,
 				462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

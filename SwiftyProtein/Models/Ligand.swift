@@ -7,88 +7,66 @@
 //
 import SWXMLHash
 
+enum LigandError: ErrorType {
+	case EmptyInfos
+	case NoEndKeyword
+}
+
+
 class Ligand {
 	
 	// MARK: - Needle
-	var xml:XMLIndexer?
 	var name:String
-	
-	//MARK: - Lazy proprieties, need xml or allways fail
-	lazy var script:String? = {
-		if let attribute = self.xml!["describeHet"]["script"].element?.attributes["id"] {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var chemicalID:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["chemicalID"] {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var chemicalName:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"]["chemicalName"].element?.text! {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var type:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["type"] {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var molecularWeight:Int? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["molecularWeight"] {
-			return (Int(attribute))
-		}
-		return (nil)
-	}()
-	
-	lazy var formula:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"]["formula"].element?.text! {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var InChIKey:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"]["InChIKey"].element?.text! {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var inChI:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"]["InChI"].element?.text! {
-			return (attribute)
-		}
-		return (nil)
-	}()
-	
-	lazy var smiles:String? = {
-		if let attribute = self.xml!["describeHet"]["ligandInfo"]["ligand"]["smiles"].element?.text! {
-			return (attribute)
-		}
-		return (nil)
-	}()
+	var atomList = [Atom]()
+	var connectList = [Connect]()
 	
 	//MARK: - Initializer
 	init(nameLigand:String){
 		name = nameLigand
 	}
 	
-	convenience init(nameLigand:String, xmlParse:String){
+	convenience init(nameLigand:String, graphicalInfos:String) throws{
 		self.init(nameLigand: nameLigand)
-		xml = SWXMLHash.parse(xmlParse)
+		try self.setGraphicalInformation(graphicalInfos)
 	}
 	
-	//MARK: - Setter String XML to Dictionnary
-	func setXMLString(xmlParse:String){
-		xml = SWXMLHash.parse(xmlParse)
+	//MARK: - Set graphical informations
+	func setGraphicalInformation(infos:String) throws{
+		guard (infos != "") else {
+			throw LigandError.EmptyInfos
+		}
+		
+		let linesTable = infos.componentsSeparatedByString("\n")
+		for line in linesTable{
+			if let atom = fillAtom(line){
+				atomList.append(atom)
+			}
+			if let connect = fillConnect(line){
+				connectList.append(connect)
+			}
+		}
+		guard infos.containsString("END") else {
+			throw LigandError.NoEndKeyword
+		}
+	}
+	
+	private func fillAtom(line:String) -> Atom? {
+		if (line != ""){
+			let data = line.componentsSeparatedByString(" ")
+			if data.count == 12 && data[0] == "ATOM" {
+				return (Atom(lineFile: line))
+			}
+		}
+		return (nil)
+	}
+	
+	private func fillConnect(line:String) -> Connect? {
+		if (line != ""){
+			let data = line.componentsSeparatedByString(" ")
+			if data.count == 12 && data[0] == "CONNECT" {
+				return Connect(lineFile: line)
+			}
+		}
+		return (nil)
 	}
 }

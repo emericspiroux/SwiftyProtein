@@ -62,11 +62,20 @@
                         <outlet property="searchLigand" destination="76B-w8-kp3" id="ISy-kM-2b6"/>
                         <outlet property="searchLigandBar" destination="76B-w8-kp3" id="QWn-Yg-scN"/>
                         <outlet property="tableLigand" destination="3Gu-Rb-WXP" id="y8N-zh-sqX"/>
+                        <segue destination="bYs-7Q-6GF" kind="show" identifier="goToSceneKit" id="aEH-7I-U48"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13a-Tu-Cen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="493" y="245"/>
+        </scene>
+        <!--Ligand-->
+        <scene sceneID="Hbg-VY-yc3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ligand" id="bYs-7Q-6GF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iym-XP-KFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100.5" y="245"/>
         </scene>
     </scenes>
 </document>

@@ -70,13 +70,22 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		apiRequester.downloadPdb(listLigand[indexPath.row].name, success: { (fileContent) in
+		apiRequester.downloadPdb(listLigand[indexPath.row].name, success:
+		{ (fileContent) in
+			do{
+				try self.listLigand[indexPath.row].setGraphicalInformation(fileContent)
+				showAlertWithTitle("Ligand", message: "Next Step !", view: self)
+			} catch LigandError.EmptyInfos {
+				showAlertWithTitle("Ligand", message: "Infos retrived are empty", view: self)
+			} catch LigandError.NoEndKeyword {
+				showAlertWithTitle("Ligand", message: "No end in file detected, maybe some data will be not display", view: self)
+			} catch {
+				showAlertWithTitle("Ligand", message: "Unknown Error", view: self)
+			}
 			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-			print(fileContent)
-			}) { (error) in
-			print(error.domain)
-			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		}) { (error) in
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+				showAlertWithTitle("RCSB", message: "Network Problem occured, please check your connection and try again.", view: self)
 		}
-		
 	}
 }
