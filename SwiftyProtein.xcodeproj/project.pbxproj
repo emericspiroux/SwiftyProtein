@@ -29,6 +29,8 @@
 		462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85841CE1A38D0020D4BD /* LigandRouter.swift */; };
 		462C85871CE1A3980020D4BD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85861CE1A3980020D4BD /* ApiRouter.swift */; };
 		462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85881CE1A3A00020D4BD /* ApiRequester.swift */; };
+		4638A1AE1CE26E28003D7B98 /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4638A1AD1CE26E27003D7B98 /* Atom.swift */; };
+		4638A1B01CE26EBA003D7B98 /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4638A1AF1CE26EBA003D7B98 /* Connect.swift */; };
 		B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		462C85841CE1A38D0020D4BD /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Helpers/Routers/LigandRouter.swift; sourceTree = "<group>"; };
 		462C85861CE1A3980020D4BD /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Helpers/Routers/ApiRouter.swift; sourceTree = "<group>"; };
 		462C85881CE1A3A00020D4BD /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Helpers/ApiRequester.swift; sourceTree = "<group>"; };
+		4638A1AD1CE26E27003D7B98 /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atom.swift; sourceTree = "<group>"; };
+		4638A1AF1CE26EBA003D7B98 /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connect.swift; sourceTree = "<group>"; };
 		7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ADE04DC1F0D07602C37701 /* Pods-SwiftyProteinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				462C856D1CE176780020D4BD /* Ligand.swift */,
+				4638A1AD1CE26E27003D7B98 /* Atom.swift */,
+				4638A1AF1CE26EBA003D7B98 /* Connect.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
 				462C85891CE1A3A00020D4BD /* ApiRequester.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
+				4638A1B01CE26EBA003D7B98 /* Connect.swift in Sources */,
 				462C85641CE170B00020D4BD /* LAErrorCodes.swift in Sources */,
 				462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */,
 				462C856C1CE175EE0020D4BD /* ListLigand.swift in Sources */,
@@ -477,6 +484,7 @@
 				462C85851CE1A38D0020D4BD /* LigandRouter.swift in Sources */,
 				462C856E1CE176780020D4BD /* Ligand.swift in Sources */,
 				462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */,
+				4638A1AE1CE26E28003D7B98 /* Atom.swift in Sources */,
 				462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

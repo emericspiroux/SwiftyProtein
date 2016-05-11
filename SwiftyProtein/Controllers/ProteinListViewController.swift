@@ -70,12 +70,12 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		apiRequester.request(LigandRouter.Read(listLigand[indexPath.row].name), success: { (xmlData) in
-				self.selectedLigan = Ligand(nameLigand: xmlData)
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		apiRequester.downloadPdb(listLigand[indexPath.row].name, success: { (fileContent) in
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			print(fileContent)
 			}) { (error) in
-				print(error.domain)
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			print(error.domain)
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 		}
 		
 	}

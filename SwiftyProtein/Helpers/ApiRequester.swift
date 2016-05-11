@@ -40,17 +40,18 @@ class ApiRequester {
 	/*
 	** download an image and return NSUTF8String image data
 	*/
-	func downloadImage(imageUrl:String, success:(UIImage)->Void, failure:(NSError)->Void){
-		Alamofire.request(.GET, imageUrl).response() {
+	func downloadPdb(pdbName:String, success:(String)->Void, failure:(NSError)->Void){
+		Alamofire.request(.GET, "http://files.rcsb.org/ligands/download/\(pdbName)_model.pdb").response() {
 			(_, _, data, _) in
 			if let data = data{
-				if let image = UIImage(data: data){
-					success(image)
+				let fileContent = String.init(data: data, encoding: NSUTF8StringEncoding)
+				if let content = fileContent{
+					success(content)
 				} else {
-					failure(NSError(domain: "Error on casting data to image", code: -1, userInfo: nil))
+					failure(NSError(domain: "File content is empty", code: -1, userInfo: nil))
 				}
 			} else {
-				failure(NSError(domain: "Error on download image user", code: -1, userInfo: nil))
+				failure(NSError(domain: "Error on download pdbFile", code: -1, userInfo: nil))
 			}
 		}
 		
