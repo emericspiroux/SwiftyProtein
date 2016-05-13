@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-321" y="245"/>
         </scene>
-        <!--Search Ligand-->
+        <!--Search-->
         <scene sceneID="q2C-6n-6cx">
             <objects>
                 <viewController id="d6G-gH-huP" customClass="ProteinListViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,17 +36,20 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Ligand (ex : POC)" translatesAutoresizingMaskIntoConstraints="NO" id="76B-w8-kp3">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qEk-o0-ezG"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-Rb-WXP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-Rb-WXP">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="76B-w8-kp3" secondAttribute="trailing" constant="-20" id="2Cy-d8-kOa"/>
                             <constraint firstItem="76B-w8-kp3" firstAttribute="top" secondItem="fYH-V2-md4" secondAttribute="bottom" id="7Lr-0K-vYA"/>
@@ -57,7 +60,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3Gu-Rb-WXP" secondAttribute="trailing" constant="-20" id="vCQ-Ic-aII"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Ligand" id="H2S-oZ-icT"/>
+                    <navigationItem key="navigationItem" title="Search" id="H2S-oZ-icT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HwJ-Ap-1k0">
+                            <connections>
+                                <action selector="cancelTabBarButton:" destination="d6G-gH-huP" id="q8A-x5-fHb"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="leftBarButtonItem" destination="HwJ-Ap-1k0" id="sc3-Hr-rZj"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchLigand" destination="76B-w8-kp3" id="ISy-kM-2b6"/>
                         <outlet property="searchLigandBar" destination="76B-w8-kp3" id="QWn-Yg-scN"/>

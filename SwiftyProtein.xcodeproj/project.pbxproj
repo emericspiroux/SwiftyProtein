@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		204CB1C6C187EE2292499B2A /* Pods_SwiftyProteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */; };
+		4627DDF61CE52CFE0098DA59 /* LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627DDF51CE52CFE0098DA59 /* LineNode.swift */; };
 		462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */; };
 		462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F61CE3A20D001E6C7C /* Atom.swift */; };
 		462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F71CE3A20D001E6C7C /* Connect.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		2B361157391BD0CA3E15FED3 /* Pods-SwiftyProteinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.release.xcconfig"; sourceTree = "<group>"; };
 		32481A55E441FFB5487163BE /* Pods-SwiftyProtein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.debug.xcconfig"; sourceTree = "<group>"; };
+		4627DDF51CE52CFE0098DA59 /* LineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineNode.swift; path = Helpers/LineNode.swift; sourceTree = "<group>"; };
 		462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneKitViewController.swift; path = Controllers/SceneKitViewController.swift; sourceTree = "<group>"; };
 		462AB7F61CE3A20D001E6C7C /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Atom.swift; path = Models/Atom.swift; sourceTree = "<group>"; };
 		462AB7F71CE3A20D001E6C7C /* Connect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connect.swift; path = Models/Connect.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				462AB8341CE3D15A001E6C7C /* Errors */,
 				462AB82B1CE3D043001E6C7C /* UIColorExt.swift */,
 				462C85651CE170BA0020D4BD /* ShowAlert.swift */,
+				4627DDF51CE52CFE0098DA59 /* LineNode.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			files = (
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
+				4627DDF61CE52CFE0098DA59 /* LineNode.swift in Sources */,
 				462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */,
 				462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */,
 				462AB82C1CE3D043001E6C7C /* UIColorExt.swift in Sources */,

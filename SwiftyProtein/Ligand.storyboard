@@ -9,7 +9,6 @@
         <!--Ligand 3D View-->
         <scene sceneID="sDS-Hj-Qc5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Coz-MI-pFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Ligand 3D View" id="kdQ-8n-i0k" customClass="SceneKitViewController" customModule="SwiftyProtein" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fiI-ou-Xvt"/>
@@ -19,23 +18,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHn-eu-pM8">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preferredRenderingAPI="1" translatesAutoresizingMaskIntoConstraints="NO" id="oHn-eu-pM8">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                             </sceneKitView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atom selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHe-es-eYU">
+                                <rect key="frame" x="20" y="497" width="560" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="GoZ-rJ-Lve"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uz5-f0-YXC">
+                                <rect key="frame" x="0.0" y="557" width="600" height="43"/>
+                                <color key="backgroundColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Re8-94-K8r"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="1" green="0.98410965859999999" blue="0.9953608478" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareScene:" destination="kdQ-8n-i0k" eventType="touchUpInside" id="jjq-Nb-1D6"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bbI-ti-ZKa">
+                                <rect key="frame" x="151" y="34" width="299" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="jMe-ir-6ga"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Stick and ball"/>
+                                    <segment title="Van Der Waals Radius"/>
+                                </segments>
+                                <color key="tintColor" red="0.17947809867216996" green="0.38309380566363638" blue="0.3509825152274999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeModel:" destination="kdQ-8n-i0k" eventType="valueChanged" id="KTc-yB-6OS"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uz5-f0-YXC" secondAttribute="trailing" constant="-20" id="C8b-kF-ysY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oHn-eu-pM8" secondAttribute="trailing" constant="-20" id="CLg-9s-jzs"/>
+                            <constraint firstItem="gHe-es-eYU" firstAttribute="trailing" secondItem="Nl1-OS-NiV" secondAttribute="trailingMargin" id="GgE-hI-2wt"/>
+                            <constraint firstItem="gil-Pb-NFS" firstAttribute="top" secondItem="gHe-es-eYU" secondAttribute="bottom" constant="51" id="Heu-hs-DfD"/>
+                            <constraint firstItem="gil-Pb-NFS" firstAttribute="top" secondItem="uz5-f0-YXC" secondAttribute="bottom" id="K6r-8E-ClT"/>
                             <constraint firstItem="gil-Pb-NFS" firstAttribute="top" secondItem="oHn-eu-pM8" secondAttribute="bottom" id="YCW-mY-1L4"/>
+                            <constraint firstItem="gHe-es-eYU" firstAttribute="leading" secondItem="Nl1-OS-NiV" secondAttribute="leadingMargin" id="dYX-0E-kup"/>
                             <constraint firstItem="oHn-eu-pM8" firstAttribute="leading" secondItem="Nl1-OS-NiV" secondAttribute="leadingMargin" constant="-20" id="gFm-MO-WIN"/>
                             <constraint firstItem="oHn-eu-pM8" firstAttribute="top" secondItem="fiI-ou-Xvt" secondAttribute="bottom" id="nB3-G8-h2a"/>
+                            <constraint firstItem="bbI-ti-ZKa" firstAttribute="top" secondItem="fiI-ou-Xvt" secondAttribute="bottom" constant="14" id="p2Z-TB-eGH"/>
+                            <constraint firstItem="uz5-f0-YXC" firstAttribute="leading" secondItem="Nl1-OS-NiV" secondAttribute="leadingMargin" constant="-20" id="sJ8-Tz-EpY"/>
+                            <constraint firstItem="bbI-ti-ZKa" firstAttribute="centerX" secondItem="Nl1-OS-NiV" secondAttribute="centerX" id="sRg-L6-5CG"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lI9-PG-ubR" appends="YES" id="2Jo-lu-11h"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="LigandScene" destination="oHn-eu-pM8" id="6ZD-Qi-3qa"/>
+                        <outlet property="atomSelectedLabel" destination="gHe-es-eYU" id="jU7-Zj-YaC"/>
                         <outlet property="ligandScene" destination="oHn-eu-pM8" id="xhU-F9-Hs0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Coz-MI-pFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lI9-PG-ubR">
+                    <connections>
+                        <action selector="SceneTapped:" destination="kdQ-8n-i0k" id="v8n-r9-vpG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1201" y="248"/>
         </scene>

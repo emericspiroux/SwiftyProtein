@@ -19,6 +19,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	var apiRequester = ApiRequester.Shared()
 	var selectedIndexRow:Int?
 	
+	var loadingFile = false
 	let cellName = "LigandCell"
 	
     override func viewDidLoad() {
@@ -37,6 +38,11 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	//MARK: - Button Actions
+	@IBAction func cancelTabBarButton(sender: UIBarButtonItem) {
+		self.dismissViewControllerAnimated(true, completion: nil)
+	}
 	
 	//MARK: - Other methods
 	func searchValue(value:String){
@@ -70,29 +76,32 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		apiRequester.downloadPdb(listLigand[indexPath.row].name, success:
-		{ (fileContent) in
-			do{
-				try self.listLigand[indexPath.row].setGraphicalInformation(fileContent)
-				self.selectedIndexRow = indexPath.row
-				self.performSegueWithIdentifier("goToSceneKit", sender: self)
-			} catch LigandError.EmptyInfos {
-				showAlertWithTitle("Ligand", message: "Infos retrived are empty", view: self)
-			} catch LigandError.NoEndKeyword {
-				showAlertWithTitle("Ligand", message: "No end in file detected, maybe some data will be not display", view: self)
-				self.selectedIndexRow = indexPath.row
-				self.performSegueWithIdentifier("goToSceneKit", sender: self)
-			} catch {
-				showAlertWithTitle("Ligand", message: "Unknown Error", view: self)
+		if (UIApplication.sharedApplication().networkActivityIndicatorVisible == false){
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+			apiRequester.downloadPdb(listLigand[indexPath.row].name, success:
+				{ (fileContent) in
+					do{
+						try self.listLigand[indexPath.row].setGraphicalInformation(fileContent)
+						self.selectedIndexRow = indexPath.row
+						self.performSegueWithIdentifier("goToSceneKit", sender: self)
+					} catch LigandError.EmptyInfos {
+						showAlertWithTitle("Ligand", message: "Infos retrived are empty", view: self)
+					} catch LigandError.NoEndKeyword {
+						showAlertWithTitle("Ligand", message: "No end in file detected, maybe some data will be not display", view: self)
+						self.selectedIndexRow = indexPath.row
+						self.performSegueWithIdentifier("goToSceneKit", sender: self)
+					} catch {
+						showAlertWithTitle("Ligand", message: "Unknown Error", view: self)
+					}
+					UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			}) { (error) in
+					UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+					showAlertWithTitle("RCSB", message: "Network Problem occured, please check your connection and try again.", view: self)
 			}
-			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-		}) { (error) in
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-				showAlertWithTitle("RCSB", message: "Network Problem occured, please check your connection and try again.", view: self)
 		}
 	}
 	
+	//MARK: - Segue preparation
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		let destinationController = segue.destinationViewController
 		if destinationController is SceneKitViewController {

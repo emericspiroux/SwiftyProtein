@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet weak var touchIDLogin: UIButton!
 	@IBOutlet weak var loadingTouchId: UIActivityIndicatorView!
+	@IBOutlet weak var touchIdLogo: UIImageView!
+	@IBOutlet weak var errorLabel: UILabel!
+	
 	let authenticationContext = LAContext()
 	
     override func viewDidLoad() {
@@ -24,7 +27,7 @@ class LoginViewController: UIViewController {
 		// 2. Check if the device has a fingerprint sensor
 		// If not, show the user an alert view and bail out!
 		guard authenticationContext.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
-			touchIDLogin.hidden = true
+			touchIdPresentation(false)
 			return
 		}
     }
@@ -33,35 +36,57 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
+	
 	@IBAction func checkTouchId(sender: UIButton) {
-		loadingTouchId.startAnimating()
-		touchIDLogin.hidden = true
+		loadingState(true)
 		authenticationContext.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Just for the protein skills")
 		{ (success, error) in
+			dispatch_async(dispatch_get_main_queue(), {
 			if (success){
-				self.loadingTouchId.stopAnimating()
-				self.touchIDLogin.hidden = false
+				self.loadingState(false)
 				self.performSegueWithIdentifier("goToConnect", sender: self)
 			} else {
-				self.loadingTouchId.stopAnimating()
-				self.touchIDLogin.hidden = false
+				self.loadingState(false)
 				if let error = error {
 					let message = errorMessageForLAErrorCode(error.code)
-					showAlertWithTitle("Touch ID", message: message, view: self)
+					self.displayErrorLabel(message)
 				}
 			}
+			})
 		}
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	
+	// MARK: - animation regulators
+	
+	func loadingState(status:Bool){
+		if status{
+			loadingTouchId.startAnimating()
+			touchIDLogin.hidden = true
+			errorLabel.hidden = true
+		} else {
+			loadingTouchId.stopAnimating()
+			self.touchIdLogo.hidden = false
+			self.touchIDLogin.hidden = false
+			self.errorLabel.hidden = true
+		}
+	}
+	
+	func touchIdPresentation(status:Bool){
+		if status{
+			touchIdLogo.alpha = 1
+			touchIDLogin.hidden = false
+			errorLabel.hidden = true
+		} else {
+			touchIdLogo.alpha = 0.2
+			touchIDLogin.hidden = true
+			displayErrorLabel("Sorry but you don't have Touch Id Enabled on your phone...")
+		}
+	}
+	
+	func displayErrorLabel(message:String){
+		errorLabel.hidden = false
+		errorLabel.text = message
+	}
 
 }

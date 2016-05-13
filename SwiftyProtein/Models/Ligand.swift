@@ -6,6 +6,7 @@
 //  Copyright © 2016 42. All rights reserved.
 //
 import SWXMLHash
+import SceneKit
 
 enum LigandError: ErrorType {
 	case EmptyInfos
@@ -20,6 +21,42 @@ class Ligand {
 	var atomList = [Atom]()
 	var connectList = [Connect]()
 	
+	
+	//MARK: - lazy infos
+	
+	lazy var type:String = {
+		if let ligandType = self.infosXML!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["type"] {
+			return (ligandType)
+		}
+		return ("No type")
+	}()
+	
+	lazy var molecularWeight:Int = {
+		if let molecularWeight = self.infosXML!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["molecularWeight"] {
+			if let intMolecularWeight = Int(molecularWeight){
+				return (intMolecularWeight)
+			}
+		}
+		return (-1)
+	}()
+	
+	lazy var chemicalName:String = {
+		if let chemicalName = self.infosXML!["describeHet"]["ligandInfo"]["ligand"]["chemicalName"].element?.text {
+			return (chemicalName)
+		}
+		return ("No chemical name")
+	}()
+	
+	lazy var formula:String = {
+		if let formula = self.infosXML!["describeHet"]["ligandInfo"]["ligand"]["formula"].element?.text {
+			return (formula)
+		}
+		return ("No formula")
+	}()
+	
+	private lazy var middleSCNVector3 = SCNVector3()
+	private var infosXML:XMLIndexer?
+	
 	//MARK: - Initializer
 	init(nameLigand:String){
 		name = nameLigand
@@ -29,6 +66,18 @@ class Ligand {
 		self.init(nameLigand: nameLigand)
 		try self.setGraphicalInformation(graphicalInfos)
 	}
+	//MARK: - Get graphical informations
+	func middleVector()->SCNVector3{
+		self.atomList.forEach { (atom) in
+			var middle = self.middleSCNVector3
+			middle.x = (middle.x + atom.x)/2
+			middle.y = (middle.y + atom.y)/2
+			middle.z = (middle.z + atom.z)/2
+			self.middleSCNVector3 = middle
+		}
+		return (self.middleSCNVector3)
+	}
+
 	
 	//MARK: - Set graphical informations
 	func setGraphicalInformation(infos:String) throws{
@@ -50,6 +99,11 @@ class Ligand {
 		}
 	}
 	
+	func setInformation(xml:String){
+		infosXML = SWXMLHash.parse(xml)
+	}
+	
+	//MARK: - Specific item
 	func atomById(id:Int) -> Atom?{
 		for atom in atomList {
 			if (atom.id == id){
@@ -57,5 +111,32 @@ class Ligand {
 			}
 		}
 		return nil
+	}
+	
+	func atomAt(vector3:SCNVector3) -> Atom?{
+		for atom in atomList {
+			if (atom.position == vector3){
+				return (atom)
+			}
+		}
+		return nil
+	}
+	
+	func connectBySenderId(id:Int) -> Connect?{
+		for connect in connectList{
+			if (connect.sender == id){
+				return (connect)
+			}
+		}
+		return nil
+	}
+}
+
+infix operator == { precedence 130 }
+func == (left: SCNVector3, right: SCNVector3) -> Bool {
+	if (left.x == right.x && left.y == right.y && left.z == right.z){
+		return (true)
+	} else {
+		return (false)
 	}
 }

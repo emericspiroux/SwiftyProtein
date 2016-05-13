@@ -18,51 +18,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-wo-une">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <rect key="frame" x="150" y="170" width="300" height="260"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KL8-Ut-4eC">
-                                        <rect key="frame" x="39" y="49" width="163" height="30"/>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchIdLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-Kn-Ga9">
+                                        <rect key="frame" x="112" y="114" width="76" height="62"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="163" id="PjK-Wq-9Pp"/>
-                                            <constraint firstAttribute="height" constant="30" id="SiO-Oe-cNh"/>
+                                            <constraint firstAttribute="height" constant="62" id="2d5-iI-E0a"/>
+                                            <constraint firstAttribute="width" constant="76" id="wAJ-P7-psT"/>
                                         </constraints>
-                                        <state key="normal" title="Login Touch ID"/>
+                                    </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JFa-VM-3JR">
+                                        <rect key="frame" x="132" y="215" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="37" id="g6k-Xc-Twa"/>
+                                            <constraint firstAttribute="height" constant="37" id="sA5-FH-UjO"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry but you don't have Touch Id Enabled on your phone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-vz-2K0">
+                                        <rect key="frame" x="59" y="187" width="183" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="183" id="DIP-Sn-qQb"/>
+                                            <constraint firstAttribute="height" constant="73" id="obT-Zr-Tep"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.53918087118787872" green="0.088230792348776996" blue="0.11323901243437963" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swifty Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-Gd-5AM">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5wT-rI-hH7"/>
+                                            <constraint firstAttribute="height" constant="106" id="qYD-so-l0A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KL8-Ut-4eC">
+                                        <rect key="frame" x="112" y="114" width="76" height="62"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="KLH-cM-5cY"/>
+                                            <constraint firstAttribute="width" constant="76" id="Vht-lY-NnJ"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="checkTouchId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1M-uY-fAm"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JFa-VM-3JR">
-                                        <rect key="frame" x="110" y="54" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="g6k-Xc-Twa"/>
-                                            <constraint firstAttribute="height" constant="20" id="sA5-FH-UjO"/>
-                                        </constraints>
-                                    </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="JFa-VM-3JR" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" id="OZx-dM-K6l"/>
-                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="P4J-3T-Tza"/>
-                                    <constraint firstAttribute="width" constant="240" id="QSk-Jo-Wjz"/>
-                                    <constraint firstAttribute="height" constant="128" id="R5l-lL-6xS"/>
-                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" id="Zfp-aw-8Nb"/>
+                                    <constraint firstItem="LQZ-Kn-Ga9" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="5pY-go-QqS"/>
+                                    <constraint firstItem="LQZ-Kn-Ga9" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" constant="15" id="Lfp-AU-xd2"/>
+                                    <constraint firstItem="JFa-VM-3JR" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" constant="103.5" id="OZx-dM-K6l"/>
+                                    <constraint firstAttribute="width" constant="300" id="QSk-Jo-Wjz"/>
+                                    <constraint firstAttribute="height" constant="260" id="R5l-lL-6xS"/>
+                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="ayo-Ac-Q0B"/>
                                     <constraint firstItem="JFa-VM-3JR" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="beK-uL-ewV"/>
+                                    <constraint firstItem="FEo-vz-2K0" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="d6p-fK-bdG"/>
+                                    <constraint firstItem="FEo-vz-2K0" firstAttribute="top" secondItem="KL8-Ut-4eC" secondAttribute="bottom" constant="11" id="h2a-4F-F0h"/>
+                                    <constraint firstItem="v9v-Gd-5AM" firstAttribute="top" secondItem="HHU-wo-une" secondAttribute="top" id="lKS-IL-9WL"/>
+                                    <constraint firstItem="KL8-Ut-4eC" firstAttribute="centerY" secondItem="HHU-wo-une" secondAttribute="centerY" constant="15" id="oH7-GD-nzC"/>
+                                    <constraint firstItem="v9v-Gd-5AM" firstAttribute="centerX" secondItem="HHU-wo-une" secondAttribute="centerX" id="yRT-6D-XUD"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HHU-wo-une" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="coB-Xj-NEr"/>
                             <constraint firstItem="HHU-wo-une" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="klo-hi-4x6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="FEo-vz-2K0" id="1f1-gN-01Q"/>
                         <outlet property="loadingTouchId" destination="JFa-VM-3JR" id="fmF-17-0S2"/>
                         <outlet property="touchIDLogin" destination="KL8-Ut-4eC" id="aDF-Hh-Am7"/>
+                        <outlet property="touchIdLogo" destination="LQZ-Kn-Ga9" id="K4V-z2-B51"/>
                         <segue destination="1sp-aQ-dD8" kind="presentation" identifier="goToConnect" modalTransitionStyle="coverVertical" id="jgU-Ta-C1T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LTC-FD-T3U">
+                    <connections>
+                        <action selector="touchIDChecker:" destination="BYZ-38-t0r" id="stZ-YY-W9h"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="380" y="231"/>
         </scene>
@@ -75,4 +115,7 @@
             <point key="canvasLocation" x="927.5" y="231"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="touchIdLogo" width="1000" height="1000"/>
+    </resources>
 </document>
