@@ -11,7 +11,8 @@ import SceneKit
 class SceneKitViewController: UIViewController {
 
 	var ligand:Ligand?
-	
+	var apiRequester = ApiRequester.Shared()
+
 	@IBOutlet weak var ligandScene: SCNView!
 	@IBOutlet weak var atomSelectedLabel: UILabel!
 	
@@ -100,5 +101,20 @@ class SceneKitViewController: UIViewController {
 		}
 	}
 	
+	
+	@IBAction func showInformations(sender: UIButton) {
+		apiRequester.request(LigandRouter.Read(ligand!.name), success: { (xml) in
+			self.ligand?.setInformation(xml)
+			self.performSegueWithIdentifier("goToInformation", sender: self)
+			}) { (error) in
+				showAlertWithTitle("Ligand", message: "Error on fetching informations", view: self)
+		}
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.destinationViewController is InfoLiganViewController{
+			(segue.destinationViewController as! InfoLiganViewController).ligand = ligand
+		}
+	}
 	
 }

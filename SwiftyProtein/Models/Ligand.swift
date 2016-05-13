@@ -31,13 +31,11 @@ class Ligand {
 		return ("No type")
 	}()
 	
-	lazy var molecularWeight:Int = {
+	lazy var molecularWeight:String = {
 		if let molecularWeight = self.infosXML!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["molecularWeight"] {
-			if let intMolecularWeight = Int(molecularWeight){
-				return (intMolecularWeight)
-			}
+			return (molecularWeight)
 		}
-		return (-1)
+		return ("No molecular weight")
 	}()
 	
 	lazy var chemicalName:String = {
