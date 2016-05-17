@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		204CB1C6C187EE2292499B2A /* Pods_SwiftyProteinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E586E6066E6561BE7E68423 /* Pods_SwiftyProteinTests.framework */; };
+		462494401CEA1B0E006E9DDE /* Ligand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4624943F1CEA1B0E006E9DDE /* Ligand.storyboard */; };
+		462494421CEA1B17006E9DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462494411CEA1B17006E9DDE /* LaunchScreen.storyboard */; };
+		462494441CEA1C65006E9DDE /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 462494431CEA1C65006E9DDE /* ligands.txt */; };
 		4627DDF61CE52CFE0098DA59 /* LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4627DDF51CE52CFE0098DA59 /* LineNode.swift */; };
 		462AB7F51CE3A1E3001E6C7C /* SceneKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */; };
 		462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB7F61CE3A20D001E6C7C /* Atom.swift */; };
@@ -19,14 +22,12 @@
 		462AB8321CE3D0A0001E6C7C /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */; };
 		462AB8331CE3D0A0001E6C7C /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */; };
 		462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */; };
-		462AB8381CE3D9B8001E6C7C /* Ligand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */; };
 		462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85301CE16A270020D4BD /* AppDelegate.swift */; };
 		462C85381CE16A270020D4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462C85371CE16A270020D4BD /* Assets.xcassets */; };
 		462C85461CE16A270020D4BD /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85451CE16A270020D4BD /* SwiftyProteinTests.swift */; };
 		462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85551CE16AC40020D4BD /* LoginViewController.swift */; };
 		462C85581CE16B4F0020D4BD /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C85571CE16B4F0020D4BD /* LocalAuthentication.framework */; };
 		462C85601CE170330020D4BD /* ProteinList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C855F1CE170330020D4BD /* ProteinList.storyboard */; };
-		462C85621CE170750020D4BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C85611CE170750020D4BD /* LaunchScreen.storyboard */; };
 		462C85661CE170BA0020D4BD /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85651CE170BA0020D4BD /* ShowAlert.swift */; };
 		462C85681CE1710C0020D4BD /* ProteinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85671CE1710C0020D4BD /* ProteinListViewController.swift */; };
 		462C856A1CE173260020D4BD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 462C85691CE173260020D4BD /* Login.storyboard */; };
@@ -35,7 +36,6 @@
 		462C85701CE179220020D4BD /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C856F1CE179220020D4BD /* SWXMLHash.framework */; };
 		462C85751CE18A680020D4BD /* LigandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85741CE18A680020D4BD /* LigandTableViewCell.swift */; };
 		462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462C85761CE18A9C0020D4BD /* LigandCell.xib */; };
-		462C857B1CE194550020D4BD /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 462C857A1CE194550020D4BD /* ligands.txt */; };
 		462C857F1CE1A2AD0020D4BD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462C857E1CE1A2AD0020D4BD /* Alamofire.framework */; };
 		4633B0761CE6986300D3EC54 /* InfoLiganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4633B0751CE6986300D3EC54 /* InfoLiganViewController.swift */; };
 		B4D98448A92ADE459302BA0C /* Pods_SwiftyProtein.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */; };
@@ -54,6 +54,9 @@
 /* Begin PBXFileReference section */
 		2B361157391BD0CA3E15FED3 /* Pods-SwiftyProteinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteinTests/Pods-SwiftyProteinTests.release.xcconfig"; sourceTree = "<group>"; };
 		32481A55E441FFB5487163BE /* Pods-SwiftyProtein.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProtein.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProtein/Pods-SwiftyProtein.debug.xcconfig"; sourceTree = "<group>"; };
+		4624943F1CEA1B0E006E9DDE /* Ligand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Ligand.storyboard; path = Views/Ligand.storyboard; sourceTree = "<group>"; };
+		462494411CEA1B17006E9DDE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Views/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		462494431CEA1C65006E9DDE /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ligands.txt; path = Ressources/ligands.txt; sourceTree = "<group>"; };
 		4627DDF51CE52CFE0098DA59 /* LineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineNode.swift; path = Helpers/LineNode.swift; sourceTree = "<group>"; };
 		462AB7F41CE3A1E3001E6C7C /* SceneKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneKitViewController.swift; path = Controllers/SceneKitViewController.swift; sourceTree = "<group>"; };
 		462AB7F61CE3A20D001E6C7C /* Atom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Atom.swift; path = Models/Atom.swift; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Library/Routers/ApiRouter.swift; sourceTree = "<group>"; };
 		462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Library/Routers/LigandRouter.swift; sourceTree = "<group>"; };
 		462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LAErrorCodes.swift; path = Helpers/Errors/LAErrorCodes.swift; sourceTree = "<group>"; };
-		462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ligand.storyboard; sourceTree = "<group>"; };
 		462C852D1CE16A270020D4BD /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462C85301CE16A270020D4BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462C85371CE16A270020D4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 		462C85551CE16AC40020D4BD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		462C85571CE16B4F0020D4BD /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		462C855F1CE170330020D4BD /* ProteinList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProteinList.storyboard; path = Views/ProteinList.storyboard; sourceTree = "<group>"; };
-		462C85611CE170750020D4BD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		462C85651CE170BA0020D4BD /* ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAlert.swift; path = Helpers/ShowAlert.swift; sourceTree = "<group>"; };
 		462C85671CE1710C0020D4BD /* ProteinListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProteinListViewController.swift; path = Controllers/ProteinListViewController.swift; sourceTree = "<group>"; };
 		462C85691CE173260020D4BD /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Views/Login.storyboard; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		462C856F1CE179220020D4BD /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftyProtein-cydtvmjotaumvodjlqtuxrtgptgl/Build/Products/Debug-iphoneos/SWXMLHash/SWXMLHash.framework"; sourceTree = "<group>"; };
 		462C85741CE18A680020D4BD /* LigandTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandTableViewCell.swift; path = Controllers/Cells/LigandTableViewCell.swift; sourceTree = "<group>"; };
 		462C85761CE18A9C0020D4BD /* LigandCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LigandCell.xib; path = Views/Cells/LigandCell.xib; sourceTree = "<group>"; };
-		462C857A1CE194550020D4BD /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
 		462C857E1CE1A2AD0020D4BD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftyProtein-cydtvmjotaumvodjlqtuxrtgptgl/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		4633B0751CE6986300D3EC54 /* InfoLiganViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoLiganViewController.swift; path = Controllers/InfoLiganViewController.swift; sourceTree = "<group>"; };
 		7AFD369D58C49B151FD4C74F /* Pods_SwiftyProtein.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProtein.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				462C85371CE16A270020D4BD /* Assets.xcassets */,
-				462C85611CE170750020D4BD /* LaunchScreen.storyboard */,
+				462494411CEA1B17006E9DDE /* LaunchScreen.storyboard */,
 				462C853C1CE16A270020D4BD /* Info.plist */,
 				462C85301CE16A270020D4BD /* AppDelegate.swift */,
 			);
@@ -270,7 +270,7 @@
 				462C85711CE18A150020D4BD /* Cells */,
 				462C85691CE173260020D4BD /* Login.storyboard */,
 				462C855F1CE170330020D4BD /* ProteinList.storyboard */,
-				462AB8371CE3D9B8001E6C7C /* Ligand.storyboard */,
+				4624943F1CEA1B0E006E9DDE /* Ligand.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 		462C85791CE194440020D4BD /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				462C857A1CE194550020D4BD /* ligands.txt */,
+				462494431CEA1C65006E9DDE /* ligands.txt */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -396,11 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				462C856A1CE173260020D4BD /* Login.storyboard in Resources */,
-				462AB8381CE3D9B8001E6C7C /* Ligand.storyboard in Resources */,
-				462C857B1CE194550020D4BD /* ligands.txt in Resources */,
+				462494421CEA1B17006E9DDE /* LaunchScreen.storyboard in Resources */,
+				462494401CEA1B0E006E9DDE /* Ligand.storyboard in Resources */,
 				462C85601CE170330020D4BD /* ProteinList.storyboard in Resources */,
 				462C85771CE18A9C0020D4BD /* LigandCell.xib in Resources */,
-				462C85621CE170750020D4BD /* LaunchScreen.storyboard in Resources */,
+				462494441CEA1C65006E9DDE /* ligands.txt in Resources */,
 				462C85381CE16A270020D4BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
