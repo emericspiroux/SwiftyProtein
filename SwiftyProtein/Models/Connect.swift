@@ -10,14 +10,17 @@ class Connect {
 	
 	var data:[String]
 	
+	// count connections
 	lazy var count:Int = {
 		return (self.data.count - 1)
 	}()
 	
+	// sender atom Id
 	lazy var sender:Int? = {
 		return (Int(self.data[1]))
 	}()
 	
+	// aray of receiver atom Id
 	lazy var receiver:[Int] = {
 		var IdsReceivers = [Int]()
 		for i in 2..<self.data.count{
@@ -28,6 +31,10 @@ class Connect {
 		return (IdsReceivers)
 	}()
 	
+	/**
+	Initialize optional connect model with a line with keyword CONECT
+	- Parameter lineFile: Line of a .pdb file from rcsb ligand database.
+	*/
 	init?(lineFile:String){
 		let dataFiltered = lineFile.componentsSeparatedByString(" ").filter{$0 != ""}
 		guard (dataFiltered.count > 0 && dataFiltered[0] == "CONECT") else {

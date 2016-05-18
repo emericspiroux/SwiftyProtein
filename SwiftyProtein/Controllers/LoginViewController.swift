@@ -9,35 +9,37 @@
 import UIKit
 import LocalAuthentication
 
+/// LoginViewController controll the initial view in Login.storyboard
 class LoginViewController: UIViewController {
-
+	
+	/// Invisible touch ID button login
 	@IBOutlet weak var touchIDLogin: UIButton!
-	@IBOutlet weak var loadingTouchId: UIActivityIndicatorView!
-	@IBOutlet weak var touchIdLogo: UIImageView!
+	
+	/// Activity indicator showed when touch id verify informations
+	@IBOutlet weak var loadingTouchID: UIActivityIndicatorView!
+	
+	/// Image view of the touch Id logo
+	@IBOutlet weak var touchIDLogo: UIImageView!
+	
+	/// Red label for displaying error on authentification
 	@IBOutlet weak var errorLabel: UILabel!
 	
+	/// Touch ID authentification context
 	let authenticationContext = LAContext()
 	
+	
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-		var error:NSError?
-		
-		// 2. Check if the device has a fingerprint sensor
-		// If not, show the user an alert view and bail out!
-		guard authenticationContext.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
-			touchIdPresentation(false)
-			return
-		}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+		// Do any additional setup after loading the view.
+		detectTouchID()
     }
 	
+	/**
+	What will be done when the user touch the `touchIDLogin` UIButton
 	
+	- Parameter sender: touch in UIButton source
+	*/
 	@IBAction func checkTouchId(sender: UIButton) {
 		loadingState(true)
 		authenticationContext.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: "Just for the protein skills")
@@ -58,35 +60,64 @@ class LoginViewController: UIViewController {
 	}
 	
 	// MARK: - animation regulators
+	/**
+	Start activity indicator `loadingTouchID`, hide `touchIDLogin` Button and `touchIDLogo` when true.
+	`False` value will hide the `errorLabel`
 	
+	- Parameter status: True when loading something
+	*/
 	func loadingState(status:Bool){
 		if status{
-			loadingTouchId.startAnimating()
+			loadingTouchID.startAnimating()
 			touchIDLogin.hidden = true
 			errorLabel.hidden = true
 		} else {
-			loadingTouchId.stopAnimating()
-			self.touchIdLogo.hidden = false
+			loadingTouchID.stopAnimating()
+			self.touchIDLogo.hidden = false
 			self.touchIDLogin.hidden = false
 			self.errorLabel.hidden = true
 		}
 	}
 	
+	/**
+	Hide `touchIDLogin` button, change alpha of `touchIDLogo` to 0.2 and display error label when it's false.
+	false means that the touchID is not enabled.
+	
+	- Parameter status: True when touchID is enabled
+	*/
 	func touchIdPresentation(status:Bool){
 		if status{
-			touchIdLogo.alpha = 1
+			touchIDLogo.alpha = 1
 			touchIDLogin.hidden = false
 			errorLabel.hidden = true
 		} else {
-			touchIdLogo.alpha = 0.2
+			touchIDLogo.alpha = 0.2
 			touchIDLogin.hidden = true
 			displayErrorLabel("Sorry but you don't have Touch Id Enabled on your phone...")
 		}
 	}
 	
+	/**
+	Set the message and visible the `errorLabel`
+	
+	- Parameter message: message of the error.
+	*/
 	func displayErrorLabel(message:String){
 		errorLabel.hidden = false
 		errorLabel.text = message
+	}
+	
+	/**
+	Check if the touchID is enabled with the LAContext
+	*/
+	func detectTouchID(){
+		var error:NSError?
+		
+		// Check if the device has a fingerprint sensor
+		guard authenticationContext.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
+			touchIdPresentation(false)
+			return
+		}
 	}
 
 }

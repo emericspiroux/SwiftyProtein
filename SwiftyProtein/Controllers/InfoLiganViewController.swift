@@ -10,17 +10,31 @@ import UIKit
 
 class InfoLiganViewController: UIViewController {
 
+	/// Chemical id label of the ligand
 	@IBOutlet weak var chemicalId: UILabel!
+	/// Chemical name label of the ligand
 	@IBOutlet weak var chemicalName: UILabel!
+	/// Type label of the ligand
 	@IBOutlet weak var type: UILabel!
+	/// Molecular weight label of the ligand
 	@IBOutlet weak var molecularWeight: UILabel!
+	/// Formula label of the ligand
 	@IBOutlet weak var formula: UILabel!
 	
+	/// Ligand object
 	var ligand:Ligand?
 	
+	/// Fill informations when view did load
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+		fillAtomInformation()
+    }
+	
+	/**
+	Fill informations in `chemicalId`, `chemicalName`, `type`, `molecularWeight` and `formula` if ligand exist.
+	*/
+	private func fillAtomInformation(){
 		if (ligand != nil){
 			chemicalId.text = ligand!.name
 			chemicalName.text = ligand!.chemicalName
@@ -28,25 +42,15 @@ class InfoLiganViewController: UIViewController {
 			molecularWeight.text = "Molecular weight:\n\(ligand!.molecularWeight)"
 			formula.text = "Formula:\n\(ligand!.formula)"
 		}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	}
+	
+	/**
+	Dismiss the present view controller
+	
+	- Parameter sender: Any `UIButton`
+	*/
 	@IBAction func backButton(sender: UIButton) {
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

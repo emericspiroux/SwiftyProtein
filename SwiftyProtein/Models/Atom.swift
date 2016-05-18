@@ -11,50 +11,66 @@ import SceneKit
 class Atom {
 	
 	//MARK: - Data table string
+	/// Exploded line without space
 	var data:[String]
 	
 	//MARK: - Lazy var data must have data or allways fail
+	/// Count
 	lazy var count:Int = {
 		return (self.data.count - 1)
 	}()
 	
+	/// Id of the Atom
 	lazy var id:Int = {
 		return (Int(self.data[1]))
 	}()!
 	
+	/// Exposed number of the atom
 	lazy var details:String = {
-		return (self.data[1])
+		let details = self.data[1]
+		let rtn = details.stringByReplacingOccurrencesOfString(
+			self.type,
+			withString: ""
+		)
+		return (rtn)
 	}()
 	
+	/// SCNVector3 position of the atom
+	lazy var position:SCNVector3 = {
+		return (SCNVector3(x:self.x, y:self.y, z:self.z))
+	}()
+	
+	/// X position of the atom
 	lazy var x:Float = {
 		return (Float(self.data[6]))
 	}()!
 	
+	/// Y position of the atom
 	lazy var y:Float = {
 		return (Float(self.data[7]))
 	}()!
 	
+	/// Z position of the atom
 	lazy var z:Float = {
 		return (Float(self.data[8]))
 	}()!
 	
+	/// Type of the atom
 	lazy var type:String = {
 		return (self.data[11])
 	}()
 	
+	/// CPK Coloring of the atom
 	lazy var color:UIColor = {
-		return (getAtomColor(self.type))
+		return (getAtomCPKColor(self.type))
 	}()
 	
+	/// Van Der Waals Radius of the atom
 	lazy var atomRadius:Int = {
 		return (getAtomRadius(self.type))
 	}()
 	
-	lazy var position:SCNVector3 = {
-		return (SCNVector3(x:self.x,y:self.y,z:self.z))
-	}()
-	
-	// MARK: - Constructor
+	// MARK: - initializator
 	init?(lineFile:String){
 		let dataFiltered = lineFile.componentsSeparatedByString(" ").filter{$0 != ""}
 		guard (dataFiltered.count == 12 && dataFiltered[0] == "ATOM") else {
@@ -64,6 +80,12 @@ class Atom {
 	}
 	
 	// MARK: - 3D Comparaison
+	/**
+	Distance between self atom and atom given in parameter
+	- Parameters:
+		- receiver: Atom to determine distance
+	- Returns: CGFloat distance between two points
+	*/
 	func distance(receiver:Atom) -> CGFloat{
 		let xd = receiver.x - self.x
 		let yd = receiver.y - self.y
@@ -77,20 +99,25 @@ class Atom {
 		}
 	}
 	
+	/**
+	Middle point of self atom and atom given in parameter
+	- Parameters:
+		- receiver: Atom to determine Middle point
+	- Returns: SCNVector3 point in middle of two given points
+	*/
 	func middlePoint(receiver:Atom) -> SCNVector3 {
 		return (SCNVector3(x: (receiver.x + self.x)/2, y: (receiver.y + self.y)/2, z: (receiver.z + self.z)/2))
 	}
-	
-	func direction(receiver:Atom) -> SCNVector3{
-		let xd = Double(receiver.x - self.x)
-		let yd = Double(receiver.y - self.y)
-		let zd = Double (receiver.z - self.z)
-
-		return (SCNVector3(x: Float(xd), y: Float(yd) , z: Float(zd)))
-	}
 }
 
-func getAtomColor(type:String) -> UIColor {
+/**
+Get atom CPK color with the type
+- Parameters:
+	- type: type letter of atom
+- Returns: UIColor based on CPK coloring model
+*/
+
+func getAtomCPKColor(type:String) -> UIColor {
 	switch type {
 	case "H":
 		return (UIColor.whiteColor())
@@ -127,6 +154,12 @@ func getAtomColor(type:String) -> UIColor {
 	}
 }
 
+/**
+Get atom Radius with the type
+- Parameters:
+	- type: type letter of atom
+- Returns: Int based Van Der Walls Radius model
+*/
 func getAtomRadius(type:String) -> Int{
 	switch type {
 	case "H":

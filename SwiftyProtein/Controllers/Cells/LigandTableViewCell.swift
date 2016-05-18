@@ -8,8 +8,10 @@
 
 import UIKit
 
+/// Custom cell who display a name of a ligand
 class LigandTableViewCell: UITableViewCell {
 
+	///Label for the name of the ligand
 	@IBOutlet weak var nameLabel: UILabel!
 
     override func awakeFromNib() {

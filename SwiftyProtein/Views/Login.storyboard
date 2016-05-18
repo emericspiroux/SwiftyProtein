@@ -91,9 +91,9 @@
                     </view>
                     <connections>
                         <outlet property="errorLabel" destination="FEo-vz-2K0" id="1f1-gN-01Q"/>
-                        <outlet property="loadingTouchId" destination="JFa-VM-3JR" id="fmF-17-0S2"/>
+                        <outlet property="loadingTouchID" destination="JFa-VM-3JR" id="X5b-6v-Q6g"/>
                         <outlet property="touchIDLogin" destination="KL8-Ut-4eC" id="aDF-Hh-Am7"/>
-                        <outlet property="touchIdLogo" destination="LQZ-Kn-Ga9" id="K4V-z2-B51"/>
+                        <outlet property="touchIDLogo" destination="LQZ-Kn-Ga9" id="3Zv-Op-ca3"/>
                         <segue destination="1sp-aQ-dD8" kind="presentation" identifier="goToConnect" modalTransitionStyle="coverVertical" id="jgU-Ta-C1T"/>
                     </connections>
                 </viewController>

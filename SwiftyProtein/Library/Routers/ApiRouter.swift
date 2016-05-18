@@ -7,13 +7,33 @@
 //
 import Alamofire
 
-/*
-** Allow ApiRequester to use route to know path and method of the request 
+/**
+Protocol for Api Routers. Use to get the inherit ressources route.
 */
-
 protocol ApiRouter {
-	func route() -> (Method, String, String)
+	/**
+	Method of request, can be:
+	
+	.GET
+	.POST
+	.UPDATE
+	.DELETE
+	
+	*/
 	var method:Method{get}
+	
+	/**
+	get the end of url path in the requested case
+	*/
 	var path:String{get}
+	
+	/**
+	get the parameter of url path in the requested case
+	*/
 	var parameters:String{get}
+	
+	/**
+	get the base of url in the requested case
+	*/
+	var baseUrl:String{get}
 }

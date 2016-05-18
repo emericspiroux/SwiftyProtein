@@ -8,36 +8,67 @@
 
 import SceneKit
 
+/**
+Choice of the model scene representation
+	- stickBall: stick-and-balls model
+	- radius: Van Der Waals Radius representation
+*/
 enum modelScene{
 	case stickBall
 	case radius
 }
 
+///Create a Scene with Ligand Model
 class LigandScene: SCNScene {
 	
+	/// model used for the representation
 	var model:modelScene = .stickBall
 	
+	/// ligand model
+	var ligand:Ligand
+	
+	/**
+	Initializator of the ligand scene
+	
+	```
+	mySceneKit.scene = LigandScene(ligand: myligand, model: modelScene.stickBall)
+	```
+	- Parameters:
+		- ligand: ligand model, must contain Atoms list to draw something.
+		- model: model based from Enum `modelScene`
+	*/
 	init(ligand:Ligand, model:modelScene) {
+		self.ligand = ligand
+		self.model = model
+		
 		super.init()
 		
-		self.model = model
-		let node = SCNNode()
-		node.camera = SCNCamera()
-		self.rootNode.addChildNode(node)
-
-		let middleView = ligand.middleVector()
-		node.position = SCNVector3(x:  middleView.x, y: middleView.y, z: middleView.z + 25)
-
-		drawAtom(ligand.atomList)
-		drawConnect(ligand)
+		initCamera()
+		drawAtom()
+		drawConnect()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func drawAtom(atomList:[Atom]){
-		for atom in atomList{
+	/**
+	private initializator of the camera
+	*/
+	private func initCamera(){
+		let node = SCNNode()
+		node.camera = SCNCamera()
+		self.rootNode.addChildNode(node)
+		
+		let middleView = ligand.middleVector()
+		node.position = SCNVector3(x:  middleView.x, y: middleView.y, z: middleView.z + 25)
+	}
+	
+	/**
+	private drawing function for all the Atoms contains in ligand
+	*/
+	private func drawAtom(){
+		for atom in ligand.atomList{
 			var atomRadius:CGFloat = 0.5
 			if model == .radius{
 				atomRadius = (CGFloat(atom.atomRadius)/100)
@@ -50,7 +81,10 @@ class LigandScene: SCNScene {
 		}
 	}
 
-	func drawConnect(ligand:Ligand){
+	/**
+	private drawing function for all the link between atoms contains in ligand
+	*/
+	private func drawConnect(){
 		for connect in ligand.connectList{
 			if let senderId = connect.sender{
 				if let sender = ligand.atomById(senderId){
@@ -58,8 +92,8 @@ class LigandScene: SCNScene {
 						if let receiver = ligand.atomById(receiverId){
 							let CylNode = LineNode(
 								parent: self.rootNode,
-								v1:	SCNVector3(x:sender.x, y:sender.y, z:sender.z),
-								v2: SCNVector3(x:receiver.x, y:receiver.y, z:receiver.z),
+								source:	SCNVector3(x:sender.x, y:sender.y, z:sender.z),
+								destination: SCNVector3(x:receiver.x, y:receiver.y, z:receiver.z),
 								radius: 0.2,
 								radSegmentCount: 6,
 								color: UIColor.darkGrayColor()

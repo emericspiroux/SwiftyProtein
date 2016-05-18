@@ -9,6 +9,18 @@
 import UIKit
 
 extension UIColor {
+	/**
+	Give an `UIColor` from an hexadecimal value format.
+	
+	```
+	let myColor = UIColor.fromRGB(0xFFFFFF)
+	```
+
+	- Parameters:
+		- rgbValue: Title of the popup display.
+	
+	- returns: `UIColor` from the hexadecimal value.
+	*/
 	static func fromRGB(rgbValue: UInt) -> UIColor {
 		return UIColor(
 			red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

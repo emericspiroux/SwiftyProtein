@@ -7,23 +7,41 @@
 //
 import Foundation
 
+/// Singleton List Ligand manager
 class ListLigand {
 	// MARK: - Singleton
+	/// static Instance of the listLigand Manager
 	static let instance = ListLigand()
 	
+	/**
+	Give the singleton object of the ListLigand
+	
+	```
+	let listLigand = ListLigand.Shared()
+	```
+	
+	- returns: `static let instance`
+	*/
 	static func Shared() -> ListLigand{
 		return (instance)
 	}
 	
 	
 	// MARK: - Needed
+	/// Array of ligands
 	var listLigands = [Ligand]()
 	
+	/**
+	Initialize the list by ftching ressources in the `Ressources/ligands.txt`
+	*/
 	init(){
 		fetchLigands()
 	}
 	
-	func fetchLigands(){
+	/**
+	Read ligands name in `Ressources/ligands.txt` and fill the listLigand var
+	*/
+	private func fetchLigands(){
 		if let filepath = NSBundle.mainBundle().pathForResource("ligands", ofType: "txt") {
 			do {
 				let fileContent = try NSString(contentsOfFile: filepath, usedEncoding: nil) as String
@@ -39,29 +57,4 @@ class ListLigand {
 			print("not found")
 		}
 	}
-	
-	func getSection() -> ([String],[[Ligand]]){
-		var sectionedLigand = [[Ligand]]()
-		var tmpLigand = [Ligand]()
-		var firstChar = listLigands.first?.name.characters.first
-		var sectionedChar = [String]()
-		sectionedChar.append("\(firstChar)")
-		
-		for listLigand in listLigands{
-			if (listLigand.name.characters.first == firstChar){
-				tmpLigand.append(listLigand)
-			} else {
-				sectionedLigand.append(tmpLigand)
-				tmpLigand.removeAll()
-				firstChar = listLigand.name.characters.first
-				sectionedChar.append("\(firstChar)")
-				tmpLigand.append(listLigand)
-			}
-		}
-		if (tmpLigand.count != 0){
-			sectionedLigand.append(tmpLigand)
-		}
-		return ((sectionedChar,sectionedLigand))
-	}
-	
 }
