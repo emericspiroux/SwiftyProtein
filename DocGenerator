@@ -1,0 +1,9 @@
+jazzy \
+  --clean \
+  --min-acl internal \
+  -e ./SwiftyProtein/AppDelegate.swift \
+  --author espiroux \
+  --author_url https://spiroux-web.fr \
+  --github_url https://github.com/emericspiroux/SwiftyProtein \
+  -m SwiftyProtein \
+  -x -workspace,SwiftyProtein.xcworkspace,-scheme,SwiftyProtein \ 
