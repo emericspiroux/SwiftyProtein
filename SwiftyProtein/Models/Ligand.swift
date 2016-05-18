@@ -202,7 +202,7 @@ class Ligand {
 }
 
 infix operator == { precedence 130 }
-func == (left: SCNVector3, right: SCNVector3) -> Bool {
+private func == (left: SCNVector3, right: SCNVector3) -> Bool {
 	if (left.x == right.x && left.y == right.y && left.z == right.z){
 		return (true)
 	} else {

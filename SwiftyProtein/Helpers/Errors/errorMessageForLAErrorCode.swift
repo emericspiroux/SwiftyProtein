@@ -8,6 +8,14 @@
 
 import LocalAuthentication
 
+/**
+Give the string about an LAContext error code
+
+- Parameters:
+	- errorCode: code of the Error.
+
+- returns: String explain what's the problem send by LAContext
+*/
 func errorMessageForLAErrorCode( errorCode:Int ) -> String{
 	
 	var message = ""

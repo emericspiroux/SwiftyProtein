@@ -8,19 +8,20 @@
 
 class Connect {
 	
+	/// Exploded line without space
 	var data:[String]
 	
-	// count connections
+	/// Count connections
 	lazy var count:Int = {
 		return (self.data.count - 1)
 	}()
 	
-	// sender atom Id
+	/// Sender atom Id
 	lazy var sender:Int? = {
 		return (Int(self.data[1]))
 	}()
 	
-	// aray of receiver atom Id
+	/// Array of receiver atom Id
 	lazy var receiver:[Int] = {
 		var IdsReceivers = [Int]()
 		for i in 2..<self.data.count{

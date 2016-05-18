@@ -112,6 +112,7 @@ class Atom {
 
 /**
 Get atom CPK color with the type
+
 - Parameters:
 	- type: type letter of atom
 - Returns: UIColor based on CPK coloring model
@@ -156,6 +157,7 @@ func getAtomCPKColor(type:String) -> UIColor {
 
 /**
 Get atom Radius with the type
+
 - Parameters:
 	- type: type letter of atom
 - Returns: Int based Van Der Walls Radius model

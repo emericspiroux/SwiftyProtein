@@ -21,7 +21,7 @@
 		462AB82E1CE3D07E001E6C7C /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB82D1CE3D07E001E6C7C /* ApiRequester.swift */; };
 		462AB8321CE3D0A0001E6C7C /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */; };
 		462AB8331CE3D0A0001E6C7C /* LigandRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */; };
-		462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */; };
+		462AB8361CE3D162001E6C7C /* errorMessageForLAErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462AB8351CE3D162001E6C7C /* errorMessageForLAErrorCode.swift */; };
 		462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85301CE16A270020D4BD /* AppDelegate.swift */; };
 		462C85381CE16A270020D4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 462C85371CE16A270020D4BD /* Assets.xcassets */; };
 		462C85461CE16A270020D4BD /* SwiftyProteinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462C85451CE16A270020D4BD /* SwiftyProteinTests.swift */; };
@@ -67,7 +67,7 @@
 		462AB82D1CE3D07E001E6C7C /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Library/ApiRequester.swift; sourceTree = "<group>"; };
 		462AB8301CE3D0A0001E6C7C /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Library/Routers/ApiRouter.swift; sourceTree = "<group>"; };
 		462AB8311CE3D0A0001E6C7C /* LigandRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LigandRouter.swift; path = Library/Routers/LigandRouter.swift; sourceTree = "<group>"; };
-		462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LAErrorCodes.swift; path = Helpers/Errors/LAErrorCodes.swift; sourceTree = "<group>"; };
+		462AB8351CE3D162001E6C7C /* errorMessageForLAErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = errorMessageForLAErrorCode.swift; path = Helpers/Errors/errorMessageForLAErrorCode.swift; sourceTree = "<group>"; };
 		462C852D1CE16A270020D4BD /* SwiftyProtein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProtein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462C85301CE16A270020D4BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		462C85371CE16A270020D4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		462AB8341CE3D15A001E6C7C /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				462AB8351CE3D162001E6C7C /* LAErrorCodes.swift */,
+				462AB8351CE3D162001E6C7C /* errorMessageForLAErrorCode.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -364,6 +364,7 @@
 				TargetAttributes = {
 					462C852C1CE16A270020D4BD = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = UGR28EXSQ5;
 					};
 					462C85401CE16A270020D4BD = {
 						CreatedOnToolsVersion = 7.3;
@@ -515,7 +516,7 @@
 				462C85561CE16AC40020D4BD /* LoginViewController.swift in Sources */,
 				462C85311CE16A270020D4BD /* AppDelegate.swift in Sources */,
 				4627DDF61CE52CFE0098DA59 /* LineNode.swift in Sources */,
-				462AB8361CE3D162001E6C7C /* LAErrorCodes.swift in Sources */,
+				462AB8361CE3D162001E6C7C /* errorMessageForLAErrorCode.swift in Sources */,
 				462AB7F91CE3A20D001E6C7C /* Connect.swift in Sources */,
 				462AB82C1CE3D043001E6C7C /* UIColorExt.swift in Sources */,
 				462AB7F81CE3A20D001E6C7C /* Atom.swift in Sources */,
@@ -640,6 +641,7 @@
 			baseConfigurationReference = 32481A55E441FFB5487163BE /* Pods-SwiftyProtein.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = espiroux.SwiftyProtein;
@@ -652,6 +654,7 @@
 			baseConfigurationReference = C84A1F778C009FE3993C3A26 /* Pods-SwiftyProtein.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyProtein/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = espiroux.SwiftyProtein;
