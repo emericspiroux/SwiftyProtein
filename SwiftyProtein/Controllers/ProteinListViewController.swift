@@ -37,6 +37,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 	let cellName = "LigandCell"
 	
 	// MARK: - View overrides
+	/// Loading delegation and custom cell
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -154,7 +155,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 		}
 	}
 	
-	//MARK: - Segue preparation
+	// MARK: - Segue preparation
 	/**
 	if the destinationViewController is :
 		- SceneKitViewController : Fill the SceneKitViewController's ligand object with the selected ligand if exist.
