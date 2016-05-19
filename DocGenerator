@@ -7,3 +7,4 @@ jazzy \
   --github_url https://github.com/emericspiroux/SwiftyProtein \
   -m SwiftyProtein \
   -x -workspace,SwiftyProtein.xcworkspace,-scheme,SwiftyProtein \ 
+  --root-url http://docswiftyprotein.spiroux-web.fr/
