@@ -10,23 +10,28 @@ import SceneKit
 
 /**
 Choice of the model scene representation
-	- stickBall: stick-and-balls model
-	- radius: Van Der Waals Radius representation
+	
+- stickBall: stick-and-balls model
+- radius: Van Der Waals Radius representation
 */
 enum modelScene{
+	/// represent ligand by the stick-and-balls model
 	case stickBall
+	/// represent ligand by the Van Der Waals Radius model
 	case radius
 }
 
 ///Create a Scene with Ligand Model
 class LigandScene: SCNScene {
 	
+	//MARK: - Properties
 	/// model used for the representation
 	var model:modelScene = .stickBall
 	
 	/// ligand model
 	var ligand:Ligand
 	
+	//MARK: - Initializer
 	/**
 	Initializator of the ligand scene
 	
@@ -52,8 +57,9 @@ class LigandScene: SCNScene {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	//MARK: - Private Methods
 	/**
-	private initializator of the camera
+	Private initializator of the camera
 	*/
 	private func initCamera(){
 		let node = SCNNode()
@@ -65,7 +71,7 @@ class LigandScene: SCNScene {
 	}
 	
 	/**
-	private drawing function for all the Atoms contains in ligand
+	Private drawing function for all the Atoms contains in ligand
 	*/
 	private func drawAtom(){
 		for atom in ligand.atomList{

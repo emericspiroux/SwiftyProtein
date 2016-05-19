@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Extension from UIColor
 extension UIColor {
 	/**
 	Give an `UIColor` from an hexadecimal value format.

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+Display a Table view with the file Ligands.txt lines.
+Display search bar to filter table entries.
+*/
 class ProteinListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 	
 	// MARK: - Proprieties

@@ -13,7 +13,7 @@ class Connect {
 	/// Exploded line without space
 	var data:[String]
 	
-	//MARK: - Attributs
+	//MARK: - Proprieties
 	/// Count connections
 	lazy var count:Int = {
 		return (self.data.count - 1)
@@ -35,7 +35,7 @@ class Connect {
 		return (IdsReceivers)
 	}()
 	
-	//MARK: - Initializator
+	//MARK: - Initializer
 	/**
 	Initialize optional connect model with a line with keyword CONECT
 	- Parameter lineFile: Line of a .pdb file from rcsb ligand database.

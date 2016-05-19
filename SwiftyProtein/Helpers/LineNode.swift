@@ -12,7 +12,7 @@ import SceneKit
 /// Line represent by a cylinder between two points
 class LineNode: SCNNode
 {
-	
+	//MARK: - Initializer
 	/**
 	Initializes the `LineNode` between two points
 	

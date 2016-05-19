@@ -15,7 +15,7 @@ class Atom {
 	/// Exploded line without space
 	var data:[String]
 	
-	//MARK: - Attributs
+	//MARK: - Proprieties
 	/// Count
 	lazy var count:Int = {
 		return (self.data.count - 1)
@@ -71,7 +71,7 @@ class Atom {
 		return (getAtomRadius(self.type))
 	}()
 	
-	// MARK: - Initializator
+	//MARK: - Initializer
 	init?(lineFile:String){
 		let dataFiltered = lineFile.componentsSeparatedByString(" ").filter{$0 != ""}
 		guard (dataFiltered.count == 12 && dataFiltered[0] == "ATOM") else {

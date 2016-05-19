@@ -8,7 +8,7 @@
 import SWXMLHash
 import SceneKit
 
-/// exeception enumerator of filling in Ligand model
+/// exception enumerator of filling in Ligand model
 enum LigandError: ErrorType {
 	/// No data
 	case EmptyInfos
@@ -19,7 +19,7 @@ enum LigandError: ErrorType {
 /// Represent a protein, contains informations, Atom array and Connect array.
 class Ligand {
 	
-	// MARK: - Attributs
+	//MARK: - Properties
 	/// Name of the ligand
 	var name:String
 	
@@ -67,7 +67,6 @@ class Ligand {
 	/// XML Indexer for rscb ligand database
 	private var infosXML:XMLIndexer?
 	
-	// MARK: - Initializator
 	//MARK: - Initializer
 	/**
 	Initilize Ligand with his name

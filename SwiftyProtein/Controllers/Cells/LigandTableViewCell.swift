@@ -11,17 +11,7 @@ import UIKit
 /// Custom cell who display a name of a ligand
 class LigandTableViewCell: UITableViewCell {
 
+	//MARK: - Proprieties
 	///Label for the name of the ligand
 	@IBOutlet weak var nameLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-
 }

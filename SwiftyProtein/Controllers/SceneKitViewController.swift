@@ -8,6 +8,7 @@
 import UIKit
 import SceneKit
 
+/// SceneKit container view who displaying Scenekit object.
 class SceneKitViewController: UIViewController {
 	
 	// MARK: - Proprieties

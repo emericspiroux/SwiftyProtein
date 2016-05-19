@@ -12,6 +12,7 @@ import LocalAuthentication
 /// LoginViewController controll the initial view in Login.storyboard
 class LoginViewController: UIViewController {
 	
+	//MARK: - Proprieties
 	/// Invisible touch ID button login
 	@IBOutlet weak var touchIDLogin: UIButton!
 	
@@ -28,13 +29,14 @@ class LoginViewController: UIViewController {
 	let authenticationContext = LAContext()
 	
 	
-
+	//MARK: - Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		detectTouchID()
     }
 	
+	//MARK: - Buttons
 	/**
 	What will be done when the user touch the `touchIDLogin` UIButton
 	
@@ -59,7 +61,7 @@ class LoginViewController: UIViewController {
 		}
 	}
 	
-	// MARK: - animation regulators
+	// MARK: - Animation regulators
 	/**
 	Start activity indicator `loadingTouchID`, hide `touchIDLogin` Button and `touchIDLogo` when true.
 	`False` value will hide the `errorLabel`
@@ -79,13 +81,14 @@ class LoginViewController: UIViewController {
 		}
 	}
 	
+	//MARK: - Private methods
 	/**
 	Hide `touchIDLogin` button, change alpha of `touchIDLogo` to 0.2 and display error label when it's false.
 	false means that the touchID is not enabled.
 	
 	- Parameter status: True when touchID is enabled
 	*/
-	func touchIdPresentation(status:Bool){
+	private func touchIdPresentation(status:Bool){
 		if status{
 			touchIDLogo.alpha = 1
 			touchIDLogin.hidden = false
@@ -102,7 +105,7 @@ class LoginViewController: UIViewController {
 	
 	- Parameter message: message of the error.
 	*/
-	func displayErrorLabel(message:String){
+	private func displayErrorLabel(message:String){
 		errorLabel.hidden = false
 		errorLabel.text = message
 	}
@@ -110,7 +113,7 @@ class LoginViewController: UIViewController {
 	/**
 	Check if the touchID is enabled with the LAContext
 	*/
-	func detectTouchID(){
+	private func detectTouchID(){
 		var error:NSError?
 		
 		// Check if the device has a fingerprint sensor
