@@ -8,12 +8,15 @@
 import SWXMLHash
 import SceneKit
 
+/// exeception enumerator of filling in Ligand model
 enum LigandError: ErrorType {
+	/// No data
 	case EmptyInfos
+	/// No End to the data
 	case NoEndKeyword
 }
 
-
+/// Represent a protein, contains informations, Atom array and Connect array.
 class Ligand {
 	
 	// MARK: - Attributs
