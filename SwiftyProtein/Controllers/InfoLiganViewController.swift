@@ -8,8 +8,13 @@
 
 import UIKit
 
+/**
+Infos ligan is the view controller who show relative information
+about the current displaying atom.
+*/
 class InfoLiganViewController: UIViewController {
 
+	//MARK: - Proprieties
 	/// Chemical id label of the ligand
 	@IBOutlet weak var chemicalId: UILabel!
 	/// Chemical name label of the ligand
@@ -21,9 +26,11 @@ class InfoLiganViewController: UIViewController {
 	/// Formula label of the ligand
 	@IBOutlet weak var formula: UILabel!
 	
+	//MARK: - Attributs
 	/// Ligand object
 	var ligand:Ligand?
 	
+	// MARK: - View overrides
 	/// Fill informations when view did load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +38,7 @@ class InfoLiganViewController: UIViewController {
 		fillAtomInformation()
     }
 	
+	// MARK: - private methods
 	/**
 	Fill informations in `chemicalId`, `chemicalName`, `type`, `molecularWeight` and `formula` if ligand exist.
 	*/
@@ -44,6 +52,7 @@ class InfoLiganViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Buttons
 	/**
 	Dismiss the present view controller
 	

@@ -8,13 +8,14 @@
 import UIKit
 import SceneKit
 
+/// Represent an Atom in a ligand model.
 class Atom {
 	
-	//MARK: - Data table string
+	//MARK: - Raw data
 	/// Exploded line without space
 	var data:[String]
 	
-	//MARK: - Lazy var data must have data or allways fail
+	//MARK: - Attributs
 	/// Count
 	lazy var count:Int = {
 		return (self.data.count - 1)
@@ -70,7 +71,7 @@ class Atom {
 		return (getAtomRadius(self.type))
 	}()
 	
-	// MARK: - initializator
+	// MARK: - Initializator
 	init?(lineFile:String){
 		let dataFiltered = lineFile.componentsSeparatedByString(" ").filter{$0 != ""}
 		guard (dataFiltered.count == 12 && dataFiltered[0] == "ATOM") else {
@@ -117,7 +118,6 @@ Get atom CPK color with the type
 	- type: type letter of atom
 - Returns: UIColor based on CPK coloring model
 */
-
 func getAtomCPKColor(type:String) -> UIColor {
 	switch type {
 	case "H":

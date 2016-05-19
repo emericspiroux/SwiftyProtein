@@ -9,7 +9,7 @@ import Alamofire
 import SWXMLHash
 
 
-// Make a request to a server API.
+/// Make a request to the server API.
 class ApiRequester {
 	
 	//MARK: - Singleton

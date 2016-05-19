@@ -16,7 +16,7 @@ enum LigandError: ErrorType {
 
 class Ligand {
 	
-	// MARK: - Needle
+	// MARK: - Attributs
 	/// Name of the ligand
 	var name:String
 	
@@ -26,8 +26,6 @@ class Ligand {
 	/// List of link between atom
 	var connectList = [Connect]()
 	
-	
-	//MARK: - lazy infos
 	/// Type family
 	lazy var type:String = {
 		if let ligandType = self.infosXML!["describeHet"]["ligandInfo"]["ligand"].element?.attributes["type"] {
@@ -66,6 +64,7 @@ class Ligand {
 	/// XML Indexer for rscb ligand database
 	private var infosXML:XMLIndexer?
 	
+	// MARK: - Initializator
 	//MARK: - Initializer
 	/**
 	Initilize Ligand with his name
@@ -88,7 +87,7 @@ class Ligand {
 		try self.setGraphicalInformation(graphicalInfos)
 	}
 	
-	//MARK: - Get graphical informations
+	//MARK: - Graphical informations
 	/**
 	Middle point the representation in 3D.
 	- Returns: SCNVector3 point in middle of all atom coordinate.
@@ -104,8 +103,6 @@ class Ligand {
 		return (self.middleSCNVector3)
 	}
 
-	
-	//MARK: - Set graphical informations
 	/**
 	Fill `Atom` and `Connect` Arrays from a .pdb file.
 	- Parameters:
@@ -131,6 +128,12 @@ class Ligand {
 		}
 	}
 	
+	/**
+	Fill `infosXML` from a `SWXMLHash` parser
+	- Parameters:
+		- xml: xml string from rscb
+	- Returns: explanation
+	*/
 	func setInformation(xml:String){
 		infosXML = SWXMLHash.parse(xml)
 	}
