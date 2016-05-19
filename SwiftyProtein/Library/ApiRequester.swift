@@ -12,7 +12,7 @@ import SWXMLHash
 /// Make a request to the server API.
 class ApiRequester {
 	
-	//MARK: - Singleton
+	// MARK: - Singleton
 	static let sharedInstance = ApiRequester()
 	
 	/**
@@ -29,7 +29,7 @@ class ApiRequester {
 		return (self.sharedInstance)
 	}
 	
-	//MARK: - Methods
+	// MARK: - Methods
 	/**
 	Send request to api server with an APIRouter inheritance Enum and execute callback.
 	

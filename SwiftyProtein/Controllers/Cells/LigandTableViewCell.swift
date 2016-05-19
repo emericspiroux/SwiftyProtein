@@ -11,7 +11,7 @@ import UIKit
 /// Custom cell who display a name of a ligand
 class LigandTableViewCell: UITableViewCell {
 
-	//MARK: - Proprieties
+	// MARK: - Proprieties
 	///Label for the name of the ligand
 	@IBOutlet weak var nameLabel: UILabel!
 }

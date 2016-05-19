@@ -88,7 +88,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
-	//MARK: - Search Bar delegation
+	// MARK: - Search Bar delegation
 	/**
 	Execute when the user type in the textfield UISearchBar.
 	Use the function searchBar and reload data of tableLigand.
@@ -102,7 +102,7 @@ class ProteinListViewController: UIViewController, UITableViewDelegate, UITableV
 		tableLigand.reloadData()
 	}
 	
-	//MARK: - Table
+	// MARK: - Table
 	/**
 	Return the number of ligand in `listLigand` in ListLigand for the `tableLigand`
 	*/

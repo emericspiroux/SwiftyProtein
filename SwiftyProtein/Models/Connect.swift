@@ -9,11 +9,11 @@
 /// Represent a link between two Atom.
 class Connect {
 	
-	//MARK: - Raw data
+	// MARK: - Raw data
 	/// Exploded line without space
 	var data:[String]
 	
-	//MARK: - Proprieties
+	// MARK: - Proprieties
 	/// Count connections
 	lazy var count:Int = {
 		return (self.data.count - 1)
@@ -35,7 +35,7 @@ class Connect {
 		return (IdsReceivers)
 	}()
 	
-	//MARK: - Initializer
+	// MARK: - Initializer
 	/**
 	Initialize optional connect model with a line with keyword CONECT
 	- Parameter lineFile: Line of a .pdb file from rcsb ligand database.

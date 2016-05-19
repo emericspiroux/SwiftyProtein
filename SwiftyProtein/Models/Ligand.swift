@@ -19,7 +19,7 @@ enum LigandError: ErrorType {
 /// Represent a protein, contains informations, Atom array and Connect array.
 class Ligand {
 	
-	//MARK: - Properties
+	// MARK: - Properties
 	/// Name of the ligand
 	var name:String
 	
@@ -67,7 +67,7 @@ class Ligand {
 	/// XML Indexer for rscb ligand database
 	private var infosXML:XMLIndexer?
 	
-	//MARK: - Initializer
+	// MARK: - Initializer
 	/**
 	Initilize Ligand with his name
 	- Parameters:
@@ -89,7 +89,7 @@ class Ligand {
 		try self.setGraphicalInformation(graphicalInfos)
 	}
 	
-	//MARK: - Graphical informations
+	// MARK: - Graphical informations
 	/**
 	Middle point the representation in 3D.
 	- Returns: SCNVector3 point in middle of all atom coordinate.
@@ -140,7 +140,7 @@ class Ligand {
 		infosXML = SWXMLHash.parse(xml)
 	}
 	
-	//MARK: - Atom research
+	// MARK: - Atom research
 	/**
 	Return `Atom` with the Id define in parameter
 	- Parameters:
@@ -189,7 +189,7 @@ class Ligand {
 		return (nil)
 	}
 	
-	//MARK: - Connect research
+	// MARK: - Connect research
 	/**
 	Return `Connect` with the Id define in parameter
 	- Parameters:

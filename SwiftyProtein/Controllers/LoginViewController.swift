@@ -12,7 +12,7 @@ import LocalAuthentication
 /// LoginViewController controll the initial view in Login.storyboard
 class LoginViewController: UIViewController {
 	
-	//MARK: - Proprieties
+	// MARK: - Proprieties
 	/// Invisible touch ID button login
 	@IBOutlet weak var touchIDLogin: UIButton!
 	
@@ -29,14 +29,14 @@ class LoginViewController: UIViewController {
 	let authenticationContext = LAContext()
 	
 	
-	//MARK: - Initializer
+	// MARK: - Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		detectTouchID()
     }
 	
-	//MARK: - Buttons
+	// MARK: - Buttons
 	/**
 	What will be done when the user touch the `touchIDLogin` UIButton
 	

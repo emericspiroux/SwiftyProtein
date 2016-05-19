@@ -14,7 +14,7 @@ about the current displaying atom.
 */
 class InfoLiganViewController: UIViewController {
 
-	//MARK: - Proprieties
+	// MARK: - Proprieties
 	/// Chemical id label of the ligand
 	@IBOutlet weak var chemicalId: UILabel!
 	/// Chemical name label of the ligand
@@ -26,7 +26,6 @@ class InfoLiganViewController: UIViewController {
 	/// Formula label of the ligand
 	@IBOutlet weak var formula: UILabel!
 	
-	//MARK: - Attributs
 	/// Ligand object
 	var ligand:Ligand?
 	

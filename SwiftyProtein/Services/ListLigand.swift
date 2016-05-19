@@ -27,10 +27,11 @@ class ListLigand {
 	}
 	
 	
-	// MARK: - Needed
+	// MARK: - Proprieties
 	/// Array of ligands
 	var listLigands = [Ligand]()
 	
+	// MARK: - Initializer
 	/**
 	Initialize the list by ftching ressources in the `Ressources/ligands.txt`
 	*/
@@ -38,6 +39,7 @@ class ListLigand {
 		fetchLigands()
 	}
 	
+	// MARK: - Private methods
 	/**
 	Read ligands name in `Ressources/ligands.txt` and fill the listLigand var
 	*/

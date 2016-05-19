@@ -35,6 +35,9 @@ class SceneKitViewController: UIViewController {
 		
 	}
 	
+	/**
+	Prepare the ligand scene and prepare some view composant.
+	*/
 	override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         // Do any additional setup after loading the view
